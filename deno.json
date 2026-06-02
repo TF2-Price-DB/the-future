@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "create-hats": "deno run --allow-read=data/ --allow-write=data/ bin/create-hats.ts"
+  },
+  "imports": {
+    "@deno.land/sqlite": "https://deno.land/x/sqlite@v3.9.1/mod.ts"
+  }
+}
