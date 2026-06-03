@@ -73,7 +73,7 @@ Once readers accept multimode HATs, write both the standard `Z` version and your
 version in the same identifier:
 
 ```text
-Z^Refined_Metal;TMC;Unique^gh.offish.tf2-sku^5002;6
+Z^Refined_Metal;TC;Unique^gh.offish.tf2-sku^5002;6
 ```
 
 The standard version goes first by convention. Old code that has been updated
@@ -106,8 +106,8 @@ At the end of the migration, your system can accept:
 
 ```text
 gh.offish.tf2-sku^5002;6
-Z^Refined_Metal;TMC;Unique
-Z^Refined_Metal;TMC;Unique^gh.offish.tf2-sku^5002;6
+Z^Refined_Metal;TC;Unique
+Z^Refined_Metal;TC;Unique^gh.offish.tf2-sku^5002;6
 ```
 
 and prefer the `Z` pair whenever it is present.
