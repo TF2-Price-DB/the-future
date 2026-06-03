@@ -1,4 +1,11 @@
-type HatVersionTProps = {
+import {
+  fromGluedString,
+  fromGluedStringArray,
+  toGluedStringArray,
+  toGluedStringValue,
+} from "./gluedString.ts";
+
+export type HatVersionZProps = {
   marketHashName: string;
   tradable: boolean;
   marketable: boolean;
@@ -10,42 +17,47 @@ type HatVersionTProps = {
   sheens: string[];
   warPaints: string[];
   paints: string[];
-  spells: string[];
   killstreakParts: string[];
+  spells: string[];
 };
 
-export function createHatVersionT(props: HatVersionTProps): string {
-  return toBasicCharacterSet(props.marketHashName) +
+export function createHatVersionZ(props: HatVersionZProps): string {
+  return (toGluedStringValue(props.marketHashName) +
     ";" +
     (props.tradable ? "T" : "") +
     (props.marketable ? "M" : "") +
     (props.craftable ? "C" : "") +
     (props.festivized ? "F" : "") +
     ";" +
-    toBasicCharacterSetArray(props.qualities) +
+    toGluedStringArray(props.qualities) +
     ";" +
-    toBasicCharacterSetArray(props.unusualEffects) +
+    toGluedStringArray(props.unusualEffects) +
     ";" +
-    toBasicCharacterSetArray(props.killstreakers) +
+    toGluedStringArray(props.killstreakers) +
     ";" +
-    toBasicCharacterSetArray(props.sheens) +
+    toGluedStringArray(props.sheens) +
     ";" +
-    toBasicCharacterSetArray(props.warPaints) +
+    toGluedStringArray(props.warPaints) +
     ";" +
-    toBasicCharacterSetArray(props.paints) +
+    toGluedStringArray(props.paints) +
     ";" +
-    toBasicCharacterSetArray(props.spells) +
+    toGluedStringArray(props.killstreakParts) +
     ";" +
-    toBasicCharacterSetArray(props.killstreakParts);
+    toGluedStringArray(props.spells)).replace(/;+$/, "");
 }
 
-export function createHatVersionTProps(
+export function createHatVersionZProps(
   desc: Record<string, unknown>,
-): HatVersionTProps {
+): HatVersionZProps {
   const tags = validateTags(desc.tags ?? []);
   const descriptions = validateSubDescriptions(desc.descriptions ?? []);
 
-  const marketHashName = desc.market_hash_name as string;
+  const marketHashName = desc.market_hash_name;
+  if (typeof marketHashName !== "string") {
+    throw new Error("Could not read market hash name", {
+      cause: desc.market_hash_name,
+    });
+  }
 
   const tradable = !!desc.tradable;
 
@@ -108,23 +120,32 @@ export function createHatVersionTProps(
   };
 }
 
-export function unparseHatVersionT(serialized: string): HatVersionTProps {
+export function unparseHatVersionZ(serialized: string): HatVersionZProps {
+  if (serialized.endsWith(";")) {
+    throw new Error(
+      "Invalid Hat Version Z: trailing semicolons are disallowed",
+    );
+  }
+
   const parts = serialized.split(";");
+  if (parts.length > 10) {
+    throw new Error("Invalid Hat Version Z: too many fields");
+  }
 
   return {
-    marketHashName: fromBasicCharacterSetString(parts[0]!),
-    tradable: parts[1].includes("T"),
-    marketable: parts[1].includes("M"),
-    craftable: parts[1].includes("C"),
-    festivized: parts[1].includes("F"),
-    qualities: fromBasicCharacterSetArray(parts[2]!),
-    unusualEffects: fromBasicCharacterSetArray(parts[3]!),
-    killstreakers: fromBasicCharacterSetArray(parts[4]!),
-    sheens: fromBasicCharacterSetArray(parts[5]!),
-    warPaints: fromBasicCharacterSetArray(parts[6]!),
-    paints: fromBasicCharacterSetArray(parts[7]!),
-    spells: fromBasicCharacterSetArray(parts[8]!),
-    killstreakParts: fromBasicCharacterSetArray(parts[9]!),
+    marketHashName: fromGluedString(parts[0] ?? ""),
+    tradable: (parts[1] ?? "").includes("T"),
+    marketable: (parts[1] ?? "").includes("M"),
+    craftable: (parts[1] ?? "").includes("C"),
+    festivized: (parts[1] ?? "").includes("F"),
+    qualities: fromGluedStringArray(parts[2] ?? ""),
+    unusualEffects: fromGluedStringArray(parts[3] ?? ""),
+    killstreakers: fromGluedStringArray(parts[4] ?? ""),
+    sheens: fromGluedStringArray(parts[5] ?? ""),
+    warPaints: fromGluedStringArray(parts[6] ?? ""),
+    paints: fromGluedStringArray(parts[7] ?? ""),
+    killstreakParts: fromGluedStringArray(parts[8] ?? ""),
+    spells: fromGluedStringArray(parts[9] ?? ""),
   };
 }
 
@@ -136,8 +157,9 @@ function pickDescriptions(descriptions: Prop[], matcher: RegExp) {
       throw new Error("Could not read sub description", { cause: desc });
     }
 
-    if (matcher.test(desc.value)) {
-      out.push(matcher.exec(desc.value)!.groups!.parsed!);
+    const match = matcher.exec(desc.value);
+    if (match) {
+      out.push(match.groups!.parsed!);
     }
   }
 
@@ -174,13 +196,13 @@ function validateTags(tags: unknown): Tag[] {
       typeof tag !== "object" || tag === null || !("category" in tag) ||
       !("localized_tag_name" in tag)
     ) {
-      throw new Error("Yeet", { cause: tag });
+      throw new Error("Could not read tag", { cause: tag });
     }
     const { localized_tag_name, category } = tag;
     if (
       typeof localized_tag_name !== "string" || typeof category !== "string"
     ) {
-      throw new Error("Yeet", { cause: tag });
+      throw new Error("Could not read tag fields", { cause: tag });
     }
 
     out.push({ localized_tag_name, category });
@@ -206,59 +228,4 @@ function validateSubDescriptions(subDescriptions: unknown): Prop[] {
   }
 
   return out;
-}
-
-function toBasicCharacterSet(unknown: unknown) {
-  if (Array.isArray(unknown)) {
-    return toBasicCharacterSetArray(unknown);
-  }
-
-  if (typeof unknown === "string") {
-    return toBasicCharacterSetString(unknown);
-  }
-
-  if (typeof unknown === "number") {
-    return unknown.toString();
-  }
-
-  throw new Error("Unreachable" + JSON.stringify(unknown));
-}
-
-function toBasicCharacterSetArray(arr: unknown[]) {
-  return arr.map((x) => {
-    if (typeof x !== "string") {
-      throw new Error("Unreachable" + JSON.stringify(x));
-    }
-
-    return toBasicCharacterSetString(x);
-  }).join("*c");
-}
-
-function fromBasicCharacterSetArray(string: string) {
-  return string === ""
-    ? []
-    : string.split("*c").map(fromBasicCharacterSetString);
-}
-
-function toBasicCharacterSetString(string: string) {
-  if (string.includes("*") || string.includes("^")) {
-    throw new Error("Ambiguous encoding", { cause: string });
-  }
-
-  string = string
-    .replaceAll("_", "*u")
-    .replaceAll("\n", "*n")
-    .replaceAll(" ", "_");
-  if (!/^[a-z0-9_äéñòöü!#%*':,.()\-\?]*$/i.test(string)) {
-    throw new Error(`Illegal character: ${JSON.stringify(string)}`);
-  }
-
-  return string;
-}
-
-function fromBasicCharacterSetString(string: string) {
-  return string
-    .replaceAll("_", " ")
-    .replaceAll("*n", "\n")
-    .replaceAll("*u", "_");
 }

@@ -1,5 +1,5 @@
 import { DB } from "@deno.land/sqlite";
-import { createHatVersionT, createHatVersionTProps } from "../src/createHat.ts";
+import { createHatVersionZ, createHatVersionZProps } from "../src/createHat.ts";
 
 if (!import.meta.main) {
   throw new Error(
@@ -76,7 +76,7 @@ for (const { rows, fetched, total } of loadInventories()) {
         (a: { assetid: string; classid: string; instanceid: string }) => {
           const key = `${a.classid}_${a.instanceid}`;
           const desc = descMap.get(key)!;
-          const hat = createHatVersionT(createHatVersionTProps(desc));
+          const hat = createHatVersionZ(createHatVersionZProps(desc));
           return [+a.assetid, hat];
         },
       ),
