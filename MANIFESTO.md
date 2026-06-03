@@ -23,7 +23,7 @@ We do not add information that was not present. HAT describes the item as seen.
 
 Valve changes item names. Apostrophes appear. Umlauts appear. Capitalization and
 spacing shift. The old SKU approach treats this as a mapping problem and asks
-every project update their schema post-haste.
+every project to update their schema post-haste.
 
 HAT does not do that. If Valve changes data that HAT records, the HAT changes.
 The `Ubersaw` and The `Übersaw` (renamed in 2025/06) are two different items as

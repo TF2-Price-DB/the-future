@@ -19,7 +19,7 @@ or
 `Z^Alien_Swarm_Parasite;TC;Unique;;;;;After_Eight`
 
 The rules to create these strings must be easy enough to write on the back of a
-napkin, so that anyone willing can create a parser and unparsed for this in no
+napkin, so that anyone willing can create a parser and unparser for this in no
 more than an hour.
 
 ## Glued String
@@ -58,16 +58,17 @@ decoding rules.
 |   9. | killstreakParts                             | Glued String Array |
 |  10. | spells                                      | Glued String Array |
 
-The second field is indicated by presence in order. F.e. Tradable, Marketable is
-`TM`; Tradable, Marketable, Craftable is `TMC`; Marketable, Festivized is `MF`.
+The second field is indicated by presence in order. For example, Tradable,
+Marketable is `TM`; Tradable, Marketable, Craftable is `TMC`; Marketable,
+Festivized is `MF`.
 
 A [full description](./specs/Z.md) of everything in version Z, including
 [inventory snippets](./specs/Z.md#inventory-snippets) that show how real
-description fields become HAT fields.
+description fields become HAT fields, is available in the spec.
 
 ## Versions
 
-This standard assumes that it will be superceeded. If somebody wants to extend
+This standard assumes that it will be superseded. If somebody wants to extend
 HAT, they can do so. SKU has been extended over time by adding non-standard
 parts to it. HAT wants to avoid that. If you want to create your own flavor, you
 should create your own version.
