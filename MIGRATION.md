@@ -12,9 +12,9 @@ changing the body at all.
 ## 1. Name your version
 
 Pick a version name that is specific enough that nobody else is likely to use it
-for a different format. Repository-style names work well, but keep them URL
-safe so identifiers can travel through routes, links, logs, and copy-paste
-without extra escaping.
+for a different format. Repository-style names work well, but keep them URL safe
+so identifiers can travel through routes, links, logs, and copy-paste without
+extra escaping.
 
 For example, if your existing strings are produced by
 [offish/tf2-sku](https://github.com/offish/tf2-sku), use:
