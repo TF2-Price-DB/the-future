@@ -11,6 +11,7 @@ export type HatVersionZProps = {
   marketable: boolean;
   craftable: boolean;
   festivized: boolean;
+  loaner: boolean;
   qualities: string[];
   unusualEffects: string[];
   killstreakers: string[];
@@ -28,6 +29,7 @@ export function createHatVersionZ(props: HatVersionZProps): string {
     (props.marketable ? "M" : "") +
     (props.craftable ? "C" : "") +
     (props.festivized ? "F" : "") +
+    (props.loaner ? "L" : "") +
     ";" +
     toGluedStringArray(props.qualities) +
     ";" +
@@ -72,6 +74,11 @@ export function createHatVersionZProps(
   const festivized = pickDescriptions(descriptions, /^(?<parsed>Festivized)$/)
     .length === 1;
 
+  const loaner = pickDescriptions(
+    descriptions,
+    /^(?<parsed>\( Loaner - Cannot be traded, marketed, crafted, or modified \))$/,
+  ).length === 1;
+
   const qualities = pickTags(tags, "Quality");
 
   const listsUnusualEffects = pickDescriptions(
@@ -109,6 +116,7 @@ export function createHatVersionZProps(
     marketable,
     craftable,
     festivized,
+    loaner,
     qualities,
     unusualEffects,
     killstreakers,
@@ -138,6 +146,7 @@ export function unparseHatVersionZ(serialized: string): HatVersionZProps {
     marketable: (fields[1] ?? "").includes("M"),
     craftable: (fields[1] ?? "").includes("C"),
     festivized: (fields[1] ?? "").includes("F"),
+    loaner: (fields[1] ?? "").includes("L"),
     qualities: fromGluedStringArray(fields[2] ?? ""),
     unusualEffects: fromGluedStringArray(fields[3] ?? ""),
     killstreakers: fromGluedStringArray(fields[4] ?? ""),

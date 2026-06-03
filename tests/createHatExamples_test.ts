@@ -1626,6 +1626,192 @@ Deno.test("Version Z example: A Brush with Death", () => {
   }, "Z^A_Brush_with_Death;C;Unique;;;;;After_Eight");
 });
 
+Deno.test("Version Z example: Loaner Professional Killstreak C.A.P.P.E.R", () => {
+  // Source: data/inv.db inventory steam64=76561198177872379, assetid=12124120510
+  assertCreatesHat(
+    {
+      "appid": 440,
+      "classid": "3760386686",
+      "instanceid": "1240807770",
+      "currency": 0,
+      "background_color": "3C352E",
+      "icon_url":
+        "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEIUw4fSxrxsTdNt9jvHuaDBN8Mmsgy4N4E3Dc6l1h9bbviZGRlJwWTA_VcWvQ-owu_CnA0v5E1DY7jpuNfel--qsKYZN03T_GK",
+      "icon_url_large":
+        "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEIUw4fSxrxsTdNt9jvHuaDBN8Mmsgy4N4E3Dc6l1h9bbviZGRlJwWTA_VcWvQ-owu_CnA0v5E1DY7jpuNfel--qsKYZN03T_GK",
+      "descriptions": [
+        {
+          "value": "Commando Grade Pistol",
+          "color": "8847ff",
+          "name": "attribute",
+        },
+        {
+          "value": "Killstreaker: Hypno-Beam",
+          "color": "7ea9d1",
+          "name": "attribute",
+        },
+        {
+          "value": "Sheen: Mean Green",
+          "color": "7ea9d1",
+          "name": "attribute",
+        },
+        {
+          "value": "Killstreaks Active",
+          "color": "7ea9d1",
+          "name": "attribute",
+        },
+        {
+          "value": "Turn your enemies into ash!",
+          "name": "attribute",
+        },
+        {
+          "value": " ",
+          "name": "attribute",
+        },
+        {
+          "value": " ",
+          "name": "attribute",
+        },
+        {
+          "value": "Confidential Collection",
+          "name": "attribute",
+        },
+        {
+          "value": "    Batsaber",
+          "color": "eb4b4b",
+          "name": "attribute",
+        },
+        {
+          "value": "    Space Hamster Hammy",
+          "color": "d32ce6",
+          "name": "attribute",
+        },
+        {
+          "value": "    Taunt: Burstchester",
+          "color": "d32ce6",
+          "name": "attribute",
+        },
+        {
+          "value": "✔ The C.A.P.P.E.R",
+          "color": "8847ff",
+          "name": "attribute",
+        },
+        {
+          "value": "    Phononaut",
+          "color": "8847ff",
+          "name": "attribute",
+        },
+        {
+          "value": "    Jupiter Jetpack",
+          "color": "8847ff",
+          "name": "attribute",
+        },
+        {
+          "value": "    The Space Diver",
+          "color": "4b69ff",
+          "name": "attribute",
+        },
+        {
+          "value": "    Cadet Visor",
+          "color": "4b69ff",
+          "name": "attribute",
+        },
+        {
+          "value": "    The Graylien",
+          "color": "4b69ff",
+          "name": "attribute",
+        },
+        {
+          "value": "    A Head Full of Hot Air",
+          "color": "4b69ff",
+          "name": "attribute",
+        },
+        {
+          "value": " ",
+          "name": "attribute",
+        },
+        {
+          "value":
+            "( Loaner - Cannot be traded, marketed, crafted, or modified )",
+          "name": "attribute",
+        },
+      ],
+      "tradable": 1,
+      "actions": [
+        {
+          "link":
+            "http://wiki.teamfortress.com/scripts/itemredirect.php?id=30666&lang=en_US",
+          "name": "Item Wiki Page...",
+        },
+        {
+          "link":
+            "steam://rungame/440/76561202255233023/+tf_econ_item_preview%20S%owner_steamid%A%assetid%D943828614521557104",
+          "name": "Inspect in Game...",
+        },
+      ],
+      "name": "Professional Killstreak C.A.P.P.E.R",
+      "name_color": "7D6D00",
+      "type": "Level 1 Pistol",
+      "market_name": "Professional Killstreak C.A.P.P.E.R",
+      "market_hash_name": "Professional Killstreak C.A.P.P.E.R",
+      "market_actions": [
+        {
+          "link":
+            "steam://rungame/440/76561202255233023/+tf_econ_item_preview%20M%listingid%A%assetid%D943828614521557104",
+          "name": "Inspect in Game...",
+        },
+      ],
+      "commodity": 0,
+      "market_tradable_restriction": 7,
+      "market_marketable_restriction": 0,
+      "marketable": 1,
+      "tags": [
+        {
+          "category": "Quality",
+          "internal_name": "Unique",
+          "localized_category_name": "Quality",
+          "localized_tag_name": "Unique",
+          "color": "7D6D00",
+        },
+        {
+          "category": "Type",
+          "internal_name": "secondary",
+          "localized_category_name": "Type",
+          "localized_tag_name": "Secondary weapon",
+        },
+        {
+          "category": "Class",
+          "internal_name": "Scout",
+          "localized_category_name": "Class",
+          "localized_tag_name": "Scout",
+        },
+        {
+          "category": "Class",
+          "internal_name": "Engineer",
+          "localized_category_name": "Class",
+          "localized_tag_name": "Engineer",
+        },
+        {
+          "category": "Rarity",
+          "internal_name": "Rarity_Mythical",
+          "localized_category_name": "Grade",
+          "localized_tag_name": "Commando",
+          "color": "8847ff",
+        },
+        {
+          "category": "Collection",
+          "internal_name": "Invasion_collection_02",
+          "localized_category_name": "Collection",
+          "localized_tag_name": "Confidential Collection",
+        },
+      ],
+      "sealed": 0,
+      "sealed_type": 0,
+    },
+    "Z^Professional_Killstreak_C.A.P.P.E.R;TMCL;Unique;;Hypno-Beam;Mean_Green;The_C.A.P.P.E.R",
+  );
+});
+
 Deno.test("Version Z example: Strange AWPer Hand", () => {
   // Source: data/inv.db inventory steam64=76561198006544512, assetid=3556559280
   assertCreatesHat(

@@ -45,22 +45,22 @@ decoding rules.
 - Any absent fields are presumed to be an empty string.
 - Interpret the fields in this manner
 
-| Field | Name                                        | Encoding           |
-| ---: | :------------------------------------------ | :----------------- |
-|   1. | marketHashName                              | Glued String       |
-|   2. | tradable, marketable, craftable, festivized | TMCF, by presence  |
-|   3. | qualities                                   | Glued String Array |
-|   4. | unusualEffects                              | Glued String Array |
-|   5. | killstreakers                               | Glued String Array |
-|   6. | sheens                                      | Glued String Array |
-|   7. | warPaints                                   | Glued String Array |
-|   8. | paints                                      | Glued String Array |
-|   9. | killstreakParts                             | Glued String Array |
-|  10. | spells                                      | Glued String Array |
+| Field | Name                                                | Encoding           |
+| ----: | :-------------------------------------------------- | :----------------- |
+|    1. | marketHashName                                      | Glued String       |
+|    2. | tradable, marketable, craftable, festivized, loaner | TMCFL, by presence |
+|    3. | qualities                                           | Glued String Array |
+|    4. | unusualEffects                                      | Glued String Array |
+|    5. | killstreakers                                       | Glued String Array |
+|    6. | sheens                                              | Glued String Array |
+|    7. | warPaints                                           | Glued String Array |
+|    8. | paints                                              | Glued String Array |
+|    9. | killstreakParts                                     | Glued String Array |
+|   10. | spells                                              | Glued String Array |
 
 The second field is indicated by presence in order. For example, Tradable,
 Marketable is `TM`; Tradable, Marketable, Craftable is `TMC`; Marketable,
-Festivized is `MF`.
+Festivized is `MF`; Loaner is `L`.
 
 A [full description](./specs/Z.md) of everything in version Z, including
 [inventory snippets](./specs/Z.md#inventory-snippets) that show how real
@@ -70,8 +70,8 @@ inventory descriptions become Version Z fields, is available in the spec.
 
 This standard assumes that it will be superseded. If somebody wants to extend
 HAT, they can do so. SKU has been extended over time by adding non-standard
-fields to it. HAT wants to avoid that. If you want to create your own flavor, you
-should create your own version.
+fields to it. HAT wants to avoid that. If you want to create your own flavor,
+you should create your own version.
 
 `Z^Dueling_Mini-Game;TM;Unique` is the version Z way of writing the common,
 tradable, marketable, Dueling Mini-Game. Let's say you want to create a

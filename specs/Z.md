@@ -31,18 +31,18 @@ Version Z is intended to be:
 
 Split the Version Z body on `;`. There are at most ten fields.
 
-| Field | Name                                                | Encoding           |
-| ----: | :-------------------------------------------------- | :----------------- |
-|     1 | `marketHashName`                                    | Glued String       |
-|     2 | `tradable`, `marketable`, `craftable`, `festivized` | flag string        |
-|     3 | `qualities`                                         | Glued String Array |
-|     4 | `unusualEffects`                                    | Glued String Array |
-|     5 | `killstreakers`                                     | Glued String Array |
-|     6 | `sheens`                                            | Glued String Array |
-|     7 | `warPaints`                                         | Glued String Array |
-|     8 | `paints`                                            | Glued String Array |
-|     9 | `killstreakParts`                                   | Glued String Array |
-|    10 | `spells`                                            | Glued String Array |
+| Field | Name                                                          | Encoding           |
+| ----: | :------------------------------------------------------------ | :----------------- |
+|     1 | `marketHashName`                                              | Glued String       |
+|     2 | `tradable`, `marketable`, `craftable`, `festivized`, `loaner` | flag string        |
+|     3 | `qualities`                                                   | Glued String Array |
+|     4 | `unusualEffects`                                              | Glued String Array |
+|     5 | `killstreakers`                                               | Glued String Array |
+|     6 | `sheens`                                                      | Glued String Array |
+|     7 | `warPaints`                                                   | Glued String Array |
+|     8 | `paints`                                                      | Glued String Array |
+|     9 | `killstreakParts`                                             | Glued String Array |
+|    10 | `spells`                                                      | Glued String Array |
 
 Absent fields are interpreted as empty strings. For array fields, an empty
 string means an empty array.
@@ -63,8 +63,9 @@ The second field is a flag string. Each flag is enabled by presence:
 | `M`  | Marketable |
 | `C`  | Craftable  |
 | `F`  | Festivized |
+| `L`  | Loaner     |
 
-Serializers SHOULD emit flags in this order: `T`, `M`, `C`, `F`.
+Serializers SHOULD emit flags in this order: `T`, `M`, `C`, `F`, `L`.
 
 Examples:
 
@@ -74,6 +75,7 @@ Examples:
 | Tradable, Marketable, Craftable | `TMC` |
 | Marketable, Festivized          | `MF`  |
 | Tradable, Craftable             | `TC`  |
+| Loaner                          | `L`   |
 
 ## Creating A Version Z Body
 
@@ -85,6 +87,8 @@ Given a Steam item description object:
 1. Set `craftable` unless the descriptions include exactly the text
    `( Not Usable in Crafting )`.
 1. Set `festivized` when the descriptions include exactly the text `Festivized`.
+1. Set `loaner` when the descriptions include exactly the text
+   `( Loaner - Cannot be traded, marketed, crafted, or modified )`.
 1. Read qualities from tags whose `category` is `Quality`, using
    `localized_tag_name`.
 1. Read unusual effects from descriptions matching `★ Unusual Effect: <effect>`.
@@ -162,8 +166,8 @@ Fields 4 through 7 are empty because the paint field is field 8.
 ## Version Z Is Fixed
 
 Version Z MUST NOT be extended by appending new fields, changing field meanings,
-or adding special cases to existing fields. If an implementation needs more
-information, it should define a new version name and publish its own rules.
+or adding flags beyond those defined in this spec. If an implementation needs
+more information, it should define a new version name and publish its own rules.
 
 Multiple versions can be carried in the same HAT by concatenating segments with
 `^`. This lets old parsers continue to read Z while newer parsers use a richer
@@ -349,6 +353,35 @@ Z^A_Brush_with_Death;C;Unique;;;;;After_Eight
 ```
 
 `Paint Color:` becomes field 8.
+
+### Loaner
+
+```json
+{
+  "market_hash_name": "Professional Killstreak C.A.P.P.E.R",
+  "tradable": 1,
+  "marketable": 1,
+  "tags": [
+    { "category": "Quality", "localized_tag_name": "Unique" }
+  ],
+  "descriptions": [
+    { "value": "Killstreaker: Hypno-Beam" },
+    { "value": "Sheen: Mean Green" },
+    { "value": "✔ The C.A.P.P.E.R" },
+    {
+      "value": "( Loaner - Cannot be traded, marketed, crafted, or modified )"
+    }
+  ]
+}
+```
+
+Produces:
+
+```text
+Z^Professional_Killstreak_C.A.P.P.E.R;TMCL;Unique;;Hypno-Beam;Mean_Green;The_C.A.P.P.E.R
+```
+
+The loaner description adds `L` to field 2 after any other flags.
 
 ### Strange Parts
 
