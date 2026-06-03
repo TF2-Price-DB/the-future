@@ -12,20 +12,22 @@ changing the body at all.
 ## 1. Name your version
 
 Pick a version name that is specific enough that nobody else is likely to use it
-for a different format. Repository-style names work well.
+for a different format. Repository-style names work well, but keep them URL
+safe so identifiers can travel through routes, links, logs, and copy-paste
+without extra escaping.
 
 For example, if your existing strings are produced by
 [offish/tf2-sku](https://github.com/offish/tf2-sku), use:
 
 ```text
-GH:offish/tf2-sku
+gh.offish.tf2-sku
 ```
 
 Then migrate bare strings into versioned HAT pairs:
 
 ```text
 if the identifier does not contain "^":
-  replace it with "GH:offish/tf2-sku^" + identifier
+  replace it with "gh.offish.tf2-sku^" + identifier
 ```
 
 So this SKU:
@@ -37,11 +39,11 @@ So this SKU:
 becomes:
 
 ```text
-GH:offish/tf2-sku^5021;6
+gh.offish.tf2-sku^5021;6
 ```
 
 Your old parser can still parse the body `5021;6`. The only new work is to split
-the outer HAT string, find the `GH:offish/tf2-sku` pair, and pass that pair's
+the outer HAT string, find the `gh.offish.tf2-sku` pair, and pass that pair's
 body to the parser you already trust.
 
 ## 2. Teach readers to accept multimode HATs
@@ -71,11 +73,11 @@ Once readers accept multimode HATs, write both the standard `Z` version and your
 version in the same identifier:
 
 ```text
-Z^Refined_Metal;TMC;Unique^GH:offish/tf2-sku^5002;6
+Z^Refined_Metal;TMC;Unique^gh.offish.tf2-sku^5002;6
 ```
 
 The standard version goes first by convention. Old code that has been updated
-only enough to understand the wrapper can use `GH:offish/tf2-sku`. New code can
+only enough to understand the wrapper can use `gh.offish.tf2-sku`. New code can
 use `Z`.
 
 Do not try to squeeze HAT data into your SKU body. Do not add non-standard
@@ -103,20 +105,21 @@ the pair forever. There is no need to rewrite the whole world on the same day.
 At the end of the migration, your system can accept:
 
 ```text
-GH:offish/tf2-sku^5002;6
+gh.offish.tf2-sku^5002;6
 Z^Refined_Metal;TMC;Unique
-Z^Refined_Metal;TMC;Unique^GH:offish/tf2-sku^5002;6
+Z^Refined_Metal;TMC;Unique^gh.offish.tf2-sku^5002;6
 ```
 
 and prefer the `Z` pair whenever it is present.
 
 ## Version name guidance
 
-Custom version names may contain any glyph besides whitespace and `^`. In
-practice, choose names that are stable and attributable:
+Custom version names may contain any glyph besides whitespace and `^`, but new
+formats SHOULD use only URL-safe unreserved characters: letters, digits, `.`,
+`_`, `-`, and `~`. In practice, choose names that are stable and attributable:
 
 ```text
-GH:owner/repo
-app.example.com/sku-v1
-my-service:2026-legacy-sku
+gh.owner.repo
+app.example.com.sku-v1
+my-service.2026-legacy-sku
 ```
