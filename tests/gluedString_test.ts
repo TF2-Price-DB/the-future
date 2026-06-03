@@ -1,3 +1,4 @@
+import { assertEquals } from "@std/assert";
 import {
   fromGluedString,
   fromGluedStringArray,
@@ -38,11 +39,3 @@ Deno.test("toGluedStringValue encodes reusable scalar values", () => {
   assertEquals(toGluedStringValue(["Unique"]), "Unique");
   assertEquals(toGluedStringValue(42), "42");
 });
-
-function assertEquals(actual: unknown, expected: unknown) {
-  if (JSON.stringify(actual) === JSON.stringify(expected)) return;
-
-  throw new Error(
-    `Expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`,
-  );
-}
