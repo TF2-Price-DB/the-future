@@ -846,6 +846,68 @@ Deno.test("Version Z example: Collector's Festivized Professional Killstreak Amp
   );
 });
 
+Deno.test("Version Z example: Strange Festive Sapper", () => {
+  // Source: data/inv.db inventory steam64=76561198114402400, assetid=16838432177
+  assertCreatesHat({
+    "appid": 440,
+    "classid": "1336077339",
+    "instanceid": "62856742",
+    "currency": 0,
+    "background_color": "3C352E",
+    "icon_url":
+      "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEIUxQQTQvnqgdbhcn1Mv6NGucF1Yk248EG3TM7kgArZruxY25ic1bBWfgNWPNi91i5DXZivMZmBIfu9LlIOVK4xnyVxPE",
+    "icon_url_large":
+      "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEIUxQQTQvnqgdbhcn1Mv6NGucF1Yk248EG3TM7kgArZruxY25ic1bBWfgNWPNi91i5DXZivMZmBIfu9LlIOVK4xnyVxPE",
+    "descriptions": [
+      {
+        "value":
+          "Place on enemy buildings to disable and slowly drain away its health.  Placing a sapper does not remove your disguise",
+        "name": "attribute",
+      },
+    ],
+    "tradable": 1,
+    "actions": [
+      {
+        "link":
+          "http://wiki.teamfortress.com/scripts/itemredirect.php?id=1080&lang=en_US",
+        "name": "Item Wiki Page...",
+      },
+    ],
+    "name": "Strange Festive Sapper",
+    "name_color": "CF6A32",
+    "type": "Limited Strange Sapper - Buildings Sapped: 0",
+    "market_name": "Strange Festive Sapper",
+    "market_hash_name": "Strange Festive Sapper",
+    "commodity": 0,
+    "market_tradable_restriction": 7,
+    "market_marketable_restriction": 0,
+    "marketable": 1,
+    "tags": [
+      {
+        "category": "Quality",
+        "internal_name": "strange",
+        "localized_category_name": "Quality",
+        "localized_tag_name": "Strange",
+        "color": "CF6A32",
+      },
+      {
+        "category": "Type",
+        "internal_name": "building",
+        "localized_category_name": "Type",
+        "localized_tag_name": "Building",
+      },
+      {
+        "category": "Class",
+        "internal_name": "Spy",
+        "localized_category_name": "Class",
+        "localized_tag_name": "Spy",
+      },
+    ],
+    "sealed": 0,
+    "sealed_type": 0,
+  }, "Z^Strange_Festive_Sapper;TMC;Strange");
+});
+
 Deno.test("Version Z example: A Handsome Handy Thing", () => {
   // Source: data/inv.db inventory steam64=76561198116723769, assetid=16930927178
   assertCreatesHat({

@@ -254,6 +254,29 @@ Z^Collector's_Festivized_Professional_Killstreak_Amputator;TMCF;Collector's;;Fir
 `Festivized` adds `F` to field 2. `Killstreaker:` becomes field 5, `Sheen:`
 becomes field 6, and the Halloween spell becomes field 10.
 
+### Festive, Not Festivized
+
+```json
+{
+  "market_hash_name": "Strange Festive Sapper",
+  "tradable": 1,
+  "marketable": 1,
+  "tags": [
+    { "category": "Quality", "localized_tag_name": "Strange" }
+  ],
+  "descriptions": []
+}
+```
+
+Produces:
+
+```text
+Z^Strange_Festive_Sapper;TMC;Strange
+```
+
+`Festive` is part of the item name and does not add `F` to field 2. Only the
+exact `Festivized` description does that.
+
 ### Skin
 
 ```json
