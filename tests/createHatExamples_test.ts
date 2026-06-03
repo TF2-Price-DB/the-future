@@ -60,6 +60,371 @@ Deno.test("Version Z example: Refined Metal", () => {
   }, "Z^Refined_Metal;TC;Unique");
 });
 
+Deno.test("Version Z example: Abominable Cosmetic Case with global unusual effects", () => {
+  // Source: data/inv.db inventory steam64=76561198036272372, assetid=16880066796
+  assertCreatesHat({
+    "appid": 440,
+    "classid": "2569425568",
+    "instanceid": "0",
+    "currency": 0,
+    "background_color": "3C352E",
+    "icon_url":
+      "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEIYxQcWA_ruwdAidvjMviZBucMnuUs4IRc5jpqgwZ-euLnZTMxcFTBA_VYXvY8oF_uXCJkvsJiBdbu8rhTLQrms4rGO-V-OdlSX56H3KbZ_po",
+    "icon_url_large":
+      "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEIYxQcWA_ruwdAidvjMviZBucMnuUs4IRc5jpqgwZ-euLnZTMxcFTBA_VYXvY8oF_uXCJkvsJiBdbu8rhTLQrms4rGO-V-OdlSX56H3KbZ_po",
+    "descriptions": [
+      {
+        "value":
+          "This Case is locked and requires an\nAbominable Cosmetic Key to open.\n\nContains a community made item\nfrom the Abominable Cosmetic Collection.",
+        "name": "attribute",
+      },
+      {
+        "value": " ",
+        "name": "attribute",
+      },
+      {
+        "value": "Contents may be Strange or an Unusual Jungle Inferno Hat",
+        "color": "7ea9d1",
+        "name": "attribute",
+      },
+      {
+        "value": " ",
+        "name": "attribute",
+      },
+      {
+        "value": " ",
+        "name": "attribute",
+      },
+      {
+        "value": "Abominable Cosmetic Collection",
+        "name": "attribute",
+      },
+      {
+        "value": "    The War Eagle",
+        "color": "eb4b4b",
+        "name": "attribute",
+      },
+      {
+        "value": "    Quizzical Quetzal",
+        "color": "eb4b4b",
+        "name": "attribute",
+      },
+      {
+        "value": "    Jungle Jersey",
+        "color": "d32ce6",
+        "name": "attribute",
+      },
+      {
+        "value": "    Tropical Toad",
+        "color": "d32ce6",
+        "name": "attribute",
+      },
+      {
+        "value": "    The Aztec Aggressor",
+        "color": "d32ce6",
+        "name": "attribute",
+      },
+      {
+        "value": "    The Hunter in Darkness",
+        "color": "8847ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    D-Eye-Monds",
+        "color": "8847ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    Transparent Trousers",
+        "color": "8847ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    The Croaking Hazard",
+        "color": "8847ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    Rifleman's Regalia",
+        "color": "8847ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    Bait and Bite",
+        "color": "4b69ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    The Nuke",
+        "color": "4b69ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    Attack Packs",
+        "color": "4b69ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    The Shellmet",
+        "color": "4b69ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    Forest Footwear",
+        "color": "4b69ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    The Most Dangerous Mane",
+        "color": "4b69ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    The Classy Capper",
+        "color": "4b69ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    The Pithy Professional",
+        "color": "4b69ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    Conagher's Utility Idol",
+        "color": "4b69ff",
+        "name": "attribute",
+      },
+      {
+        "value": "    Fireman's Essentials",
+        "color": "4b69ff",
+        "name": "attribute",
+      },
+      {
+        "value": " ",
+        "name": "attribute",
+      },
+      {
+        "value": "Case Global Unusual Effect(s)",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Green Confetti",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Purple Confetti",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Haunted Ghosts",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Green Energy",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Purple Energy",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Circling TF Logo",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Massed Flies",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Burning Flames",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Scorching Flames",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Searing Plasma",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Vivid Plasma",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Sunbeams",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Circling Peace Sign",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Circling Heart",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Stormy Storm",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Blizzardy Storm",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Nuts n' Bolts",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Orbiting Planets",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Orbiting Fire",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Bubbling",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Smoking",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Steaming",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Kill-a-Watt",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Terror-Watt",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Cloud 9",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Aces High",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Dead Presidents",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Miami Nights",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": "★ Unusual Effect: Disco Beat Down",
+        "color": "ffd700",
+        "name": "attribute",
+      },
+      {
+        "value": " ",
+        "name": "attribute",
+      },
+      {
+        "value": "Case Global Bonus Item(s)",
+        "name": "attribute",
+      },
+      {
+        "value":
+          "Paint Cans!\nTaunt Unusualifiers!\nMvM Tickets!\nAnd TF2 Tools!",
+        "name": "attribute",
+      },
+      {
+        "value": "Inspect for full list of unusual effects and more details",
+        "name": "attribute",
+      },
+    ],
+    "tradable": 1,
+    "actions": [
+      {
+        "link":
+          "http://wiki.teamfortress.com/scripts/itemredirect.php?id=5871&lang=en_US",
+        "name": "Item Wiki Page...",
+      },
+      {
+        "link":
+          "steam://rungame/440/76561202255233023/+tf_econ_item_preview%20S%owner_steamid%A%assetid%D3370103730958384407",
+        "name": "Inspect in Game...",
+      },
+    ],
+    "name": "Abominable Cosmetic Case",
+    "name_color": "7D6D00",
+    "type": "",
+    "market_name": "Abominable Cosmetic Case",
+    "market_hash_name": "Abominable Cosmetic Case",
+    "market_actions": [
+      {
+        "link":
+          "steam://rungame/440/76561202255233023/+tf_econ_item_preview%20M%listingid%A%assetid%D3370103730958384407",
+        "name": "Inspect in Game...",
+      },
+    ],
+    "commodity": 1,
+    "market_tradable_restriction": 7,
+    "market_marketable_restriction": 0,
+    "marketable": 1,
+    "tags": [
+      {
+        "category": "Quality",
+        "internal_name": "Unique",
+        "localized_category_name": "Quality",
+        "localized_tag_name": "Unique",
+        "color": "7D6D00",
+      },
+      {
+        "category": "Type",
+        "internal_name": "Supply Crate",
+        "localized_category_name": "Type",
+        "localized_tag_name": "Crate",
+      },
+      {
+        "category": "Collection",
+        "internal_name": "Campaign3Cosmetics_Case1_collection",
+        "localized_category_name": "Collection",
+        "localized_tag_name": "Abominable Cosmetic Collection",
+      },
+    ],
+    "sealed": 0,
+    "sealed_type": 0,
+  }, "Z^Abominable_Cosmetic_Case;TMC;Unique");
+});
+
 Deno.test("Version Z example: Strange Unusual A Handsome Handy Thing", () => {
   // Source: data/inv.db inventory steam64=76561198069527288, assetid=15573287602
   assertCreatesHat(
