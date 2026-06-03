@@ -1,0 +1,289 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+<title id="title">Inventory Maximum Hat Length Log Bar Chart</title>
+<desc id="desc">Zero-baseline log10 frequency plus one bar chart of the maximum hat length per inventory with at least one item.</desc>
+<rect width="100%" height="100%" fill="#fbfbf8"/>
+<line x1="112" y1="716.00" x2="1364" y2="716.00" stroke="#e1e4e8" stroke-width="1"/>
+<text x="102" y="724.00" text-anchor="end" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">0</text>
+<line x1="112" y1="663.21" x2="1364" y2="663.21" stroke="#cfd7e6" stroke-width="1.4"/>
+<text x="102" y="671.21" text-anchor="end" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">1</text>
+<line x1="112" y1="533.37" x2="1364" y2="533.37" stroke="#e1e4e8" stroke-width="1"/>
+<text x="102" y="541.37" text-anchor="end" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">10</text>
+<line x1="112" y1="364.50" x2="1364" y2="364.50" stroke="#e1e4e8" stroke-width="1"/>
+<text x="102" y="372.50" text-anchor="end" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">100</text>
+<line x1="112" y1="189.81" x2="1364" y2="189.81" stroke="#e1e4e8" stroke-width="1"/>
+<text x="102" y="197.81" text-anchor="end" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">1,000</text>
+<line x1="112" y1="64.00" x2="1364" y2="64.00" stroke="#e1e4e8" stroke-width="1"/>
+<text x="102" y="72.00" text-anchor="end" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">5,221</text>
+<rect x="177.32" y="567.79" width="3.28" height="148.21" fill="#d56a4c" opacity="0.82"><title>inventory max length 18: 6</title></rect>
+<rect x="188.21" y="520.65" width="3.28" height="195.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 21: 12</title></rect>
+<rect x="195.47" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 23: 1</title></rect>
+<rect x="199.10" y="632.33" width="3.28" height="83.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 24: 2</title></rect>
+<rect x="202.72" y="540.63" width="3.28" height="175.37" fill="#d56a4c" opacity="0.82"><title>inventory max length 25: 9</title></rect>
+<rect x="206.35" y="632.33" width="3.28" height="83.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 26: 2</title></rect>
+<rect x="209.98" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 27: 1</title></rect>
+<rect x="213.61" y="500.22" width="3.28" height="215.78" fill="#d56a4c" opacity="0.82"><title>inventory max length 28: 16</title></rect>
+<rect x="217.24" y="610.42" width="3.28" height="105.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 29: 3</title></rect>
+<rect x="220.87" y="610.42" width="3.28" height="105.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 30: 3</title></rect>
+<rect x="224.50" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 31: 1</title></rect>
+<rect x="228.13" y="557.62" width="3.28" height="158.38" fill="#d56a4c" opacity="0.82"><title>inventory max length 32: 7</title></rect>
+<rect x="231.76" y="593.42" width="3.28" height="122.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 33: 4</title></rect>
+<rect x="235.39" y="548.65" width="3.28" height="167.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 34: 8</title></rect>
+<rect x="239.01" y="520.65" width="3.28" height="195.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 35: 12</title></rect>
+<rect x="242.64" y="314.79" width="3.28" height="401.21" fill="#d56a4c" opacity="0.82"><title>inventory max length 36: 193</title></rect>
+<rect x="246.27" y="526.74" width="3.28" height="189.26" fill="#d56a4c" opacity="0.82"><title>inventory max length 37: 11</title></rect>
+<rect x="249.90" y="433.16" width="3.28" height="282.84" fill="#d56a4c" opacity="0.82"><title>inventory max length 38: 40</title></rect>
+<rect x="253.53" y="610.42" width="3.28" height="105.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 39: 3</title></rect>
+<rect x="257.16" y="593.42" width="3.28" height="122.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 40: 4</title></rect>
+<rect x="260.79" y="557.62" width="3.28" height="158.38" fill="#d56a4c" opacity="0.82"><title>inventory max length 41: 7</title></rect>
+<rect x="264.42" y="579.53" width="3.28" height="136.47" fill="#d56a4c" opacity="0.82"><title>inventory max length 42: 5</title></rect>
+<rect x="268.05" y="548.65" width="3.28" height="167.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 43: 8</title></rect>
+<rect x="271.68" y="504.83" width="3.28" height="211.17" fill="#d56a4c" opacity="0.82"><title>inventory max length 44: 15</title></rect>
+<rect x="275.30" y="520.65" width="3.28" height="195.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 45: 12</title></rect>
+<rect x="278.93" y="487.84" width="3.28" height="228.16" fill="#d56a4c" opacity="0.82"><title>inventory max length 46: 19</title></rect>
+<rect x="282.56" y="500.22" width="3.28" height="215.78" fill="#d56a4c" opacity="0.82"><title>inventory max length 47: 16</title></rect>
+<rect x="286.19" y="593.42" width="3.28" height="122.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 48: 4</title></rect>
+<rect x="289.82" y="579.53" width="3.28" height="136.47" fill="#d56a4c" opacity="0.82"><title>inventory max length 49: 5</title></rect>
+<rect x="293.45" y="526.74" width="3.28" height="189.26" fill="#d56a4c" opacity="0.82"><title>inventory max length 50: 11</title></rect>
+<rect x="297.08" y="557.62" width="3.28" height="158.38" fill="#d56a4c" opacity="0.82"><title>inventory max length 51: 7</title></rect>
+<rect x="300.71" y="533.37" width="3.28" height="182.63" fill="#d56a4c" opacity="0.82"><title>inventory max length 52: 10</title></rect>
+<rect x="304.34" y="520.65" width="3.28" height="195.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 53: 12</title></rect>
+<rect x="307.97" y="632.33" width="3.28" height="83.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 54: 2</title></rect>
+<rect x="311.59" y="540.63" width="3.28" height="175.37" fill="#d56a4c" opacity="0.82"><title>inventory max length 55: 9</title></rect>
+<rect x="315.22" y="540.63" width="3.28" height="175.37" fill="#d56a4c" opacity="0.82"><title>inventory max length 56: 9</title></rect>
+<rect x="318.85" y="533.37" width="3.28" height="182.63" fill="#d56a4c" opacity="0.82"><title>inventory max length 57: 10</title></rect>
+<rect x="322.48" y="487.84" width="3.28" height="228.16" fill="#d56a4c" opacity="0.82"><title>inventory max length 58: 19</title></rect>
+<rect x="326.11" y="495.86" width="3.28" height="220.14" fill="#d56a4c" opacity="0.82"><title>inventory max length 59: 17</title></rect>
+<rect x="329.74" y="557.62" width="3.28" height="158.38" fill="#d56a4c" opacity="0.82"><title>inventory max length 60: 7</title></rect>
+<rect x="333.37" y="533.37" width="3.28" height="182.63" fill="#d56a4c" opacity="0.82"><title>inventory max length 61: 10</title></rect>
+<rect x="337.00" y="533.37" width="3.28" height="182.63" fill="#d56a4c" opacity="0.82"><title>inventory max length 62: 10</title></rect>
+<rect x="340.63" y="520.65" width="3.28" height="195.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 63: 12</title></rect>
+<rect x="344.26" y="557.62" width="3.28" height="158.38" fill="#d56a4c" opacity="0.82"><title>inventory max length 64: 7</title></rect>
+<rect x="347.88" y="548.65" width="3.28" height="167.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 65: 8</title></rect>
+<rect x="351.51" y="526.74" width="3.28" height="189.26" fill="#d56a4c" opacity="0.82"><title>inventory max length 66: 11</title></rect>
+<rect x="355.14" y="567.79" width="3.28" height="148.21" fill="#d56a4c" opacity="0.82"><title>inventory max length 67: 6</title></rect>
+<rect x="358.77" y="520.65" width="3.28" height="195.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 68: 12</title></rect>
+<rect x="362.40" y="526.74" width="3.28" height="189.26" fill="#d56a4c" opacity="0.82"><title>inventory max length 69: 11</title></rect>
+<rect x="366.03" y="632.33" width="3.28" height="83.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 70: 2</title></rect>
+<rect x="369.66" y="548.65" width="3.28" height="167.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 71: 8</title></rect>
+<rect x="373.29" y="593.42" width="3.28" height="122.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 72: 4</title></rect>
+<rect x="376.92" y="515.00" width="3.28" height="201.00" fill="#d56a4c" opacity="0.82"><title>inventory max length 73: 13</title></rect>
+<rect x="380.54" y="579.53" width="3.28" height="136.47" fill="#d56a4c" opacity="0.82"><title>inventory max length 74: 5</title></rect>
+<rect x="384.17" y="464.98" width="3.28" height="251.02" fill="#d56a4c" opacity="0.82"><title>inventory max length 75: 26</title></rect>
+<rect x="387.80" y="520.65" width="3.28" height="195.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 76: 12</title></rect>
+<rect x="391.43" y="579.53" width="3.28" height="136.47" fill="#d56a4c" opacity="0.82"><title>inventory max length 77: 5</title></rect>
+<rect x="395.06" y="533.37" width="3.28" height="182.63" fill="#d56a4c" opacity="0.82"><title>inventory max length 78: 10</title></rect>
+<rect x="398.69" y="533.37" width="3.28" height="182.63" fill="#d56a4c" opacity="0.82"><title>inventory max length 79: 10</title></rect>
+<rect x="402.32" y="548.65" width="3.28" height="167.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 80: 8</title></rect>
+<rect x="405.95" y="526.74" width="3.28" height="189.26" fill="#d56a4c" opacity="0.82"><title>inventory max length 81: 11</title></rect>
+<rect x="409.58" y="548.65" width="3.28" height="167.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 82: 8</title></rect>
+<rect x="413.21" y="509.75" width="3.28" height="206.25" fill="#d56a4c" opacity="0.82"><title>inventory max length 83: 14</title></rect>
+<rect x="416.83" y="515.00" width="3.28" height="201.00" fill="#d56a4c" opacity="0.82"><title>inventory max length 84: 13</title></rect>
+<rect x="420.46" y="470.84" width="3.28" height="245.16" fill="#d56a4c" opacity="0.82"><title>inventory max length 85: 24</title></rect>
+<rect x="424.09" y="470.84" width="3.28" height="245.16" fill="#d56a4c" opacity="0.82"><title>inventory max length 86: 24</title></rect>
+<rect x="427.72" y="427.79" width="3.28" height="288.21" fill="#d56a4c" opacity="0.82"><title>inventory max length 87: 43</title></rect>
+<rect x="431.35" y="433.16" width="3.28" height="282.84" fill="#d56a4c" opacity="0.82"><title>inventory max length 88: 40</title></rect>
+<rect x="434.98" y="284.96" width="3.28" height="431.04" fill="#d56a4c" opacity="0.82"><title>inventory max length 89: 286</title></rect>
+<rect x="438.61" y="400.45" width="3.28" height="315.55" fill="#d56a4c" opacity="0.82"><title>inventory max length 90: 62</title></rect>
+<rect x="442.24" y="134.40" width="3.28" height="581.60" fill="#d56a4c" opacity="0.82"><title>inventory max length 91: 2,071</title></rect>
+<rect x="445.87" y="277.39" width="3.28" height="438.61" fill="#d56a4c" opacity="0.82"><title>inventory max length 92: 316</title></rect>
+<rect x="449.50" y="141.12" width="3.28" height="574.88" fill="#d56a4c" opacity="0.82"><title>inventory max length 93: 1,896</title></rect>
+<rect x="453.12" y="268.98" width="3.28" height="447.02" fill="#d56a4c" opacity="0.82"><title>inventory max length 94: 353</title></rect>
+<rect x="456.75" y="213.86" width="3.28" height="502.14" fill="#d56a4c" opacity="0.82"><title>inventory max length 95: 729</title></rect>
+<rect x="460.38" y="240.28" width="3.28" height="475.72" fill="#d56a4c" opacity="0.82"><title>inventory max length 96: 515</title></rect>
+<rect x="464.01" y="275.49" width="3.28" height="440.51" fill="#d56a4c" opacity="0.82"><title>inventory max length 97: 324</title></rect>
+<rect x="467.64" y="257.42" width="3.28" height="458.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 98: 411</title></rect>
+<rect x="471.27" y="179.57" width="3.28" height="536.43" fill="#d56a4c" opacity="0.82"><title>inventory max length 99: 1,144</title></rect>
+<rect x="474.90" y="277.63" width="3.28" height="438.37" fill="#d56a4c" opacity="0.82"><title>inventory max length 100: 315</title></rect>
+<rect x="478.53" y="286.84" width="3.28" height="429.16" fill="#d56a4c" opacity="0.82"><title>inventory max length 101: 279</title></rect>
+<rect x="482.16" y="252.24" width="3.28" height="463.76" fill="#d56a4c" opacity="0.82"><title>inventory max length 102: 440</title></rect>
+<rect x="485.79" y="258.73" width="3.28" height="457.27" fill="#d56a4c" opacity="0.82"><title>inventory max length 103: 404</title></rect>
+<rect x="489.41" y="242.68" width="3.28" height="473.32" fill="#d56a4c" opacity="0.82"><title>inventory max length 104: 499</title></rect>
+<rect x="493.04" y="277.39" width="3.28" height="438.61" fill="#d56a4c" opacity="0.82"><title>inventory max length 105: 316</title></rect>
+<rect x="496.67" y="257.24" width="3.28" height="458.76" fill="#d56a4c" opacity="0.82"><title>inventory max length 106: 412</title></rect>
+<rect x="500.30" y="241.32" width="3.28" height="474.68" fill="#d56a4c" opacity="0.82"><title>inventory max length 107: 508</title></rect>
+<rect x="503.93" y="258.73" width="3.28" height="457.27" fill="#d56a4c" opacity="0.82"><title>inventory max length 108: 404</title></rect>
+<rect x="507.56" y="262.39" width="3.28" height="453.61" fill="#d56a4c" opacity="0.82"><title>inventory max length 109: 385</title></rect>
+<rect x="511.19" y="215.33" width="3.28" height="500.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 110: 715</title></rect>
+<rect x="514.82" y="271.38" width="3.28" height="444.62" fill="#d56a4c" opacity="0.82"><title>inventory max length 111: 342</title></rect>
+<rect x="518.45" y="263.98" width="3.28" height="452.02" fill="#d56a4c" opacity="0.82"><title>inventory max length 112: 377</title></rect>
+<rect x="522.08" y="266.44" width="3.28" height="449.56" fill="#d56a4c" opacity="0.82"><title>inventory max length 113: 365</title></rect>
+<rect x="525.70" y="274.79" width="3.28" height="441.21" fill="#d56a4c" opacity="0.82"><title>inventory max length 114: 327</title></rect>
+<rect x="529.33" y="287.39" width="3.28" height="428.61" fill="#d56a4c" opacity="0.82"><title>inventory max length 115: 277</title></rect>
+<rect x="532.96" y="266.65" width="3.28" height="449.35" fill="#d56a4c" opacity="0.82"><title>inventory max length 116: 364</title></rect>
+<rect x="536.59" y="282.87" width="3.28" height="433.13" fill="#d56a4c" opacity="0.82"><title>inventory max length 117: 294</title></rect>
+<rect x="540.22" y="279.83" width="3.28" height="436.17" fill="#d56a4c" opacity="0.82"><title>inventory max length 118: 306</title></rect>
+<rect x="543.85" y="296.08" width="3.28" height="419.92" fill="#d56a4c" opacity="0.82"><title>inventory max length 119: 247</title></rect>
+<rect x="547.48" y="280.33" width="3.28" height="435.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 120: 304</title></rect>
+<rect x="551.11" y="292.19" width="3.28" height="423.81" fill="#d56a4c" opacity="0.82"><title>inventory max length 121: 260</title></rect>
+<rect x="554.74" y="289.33" width="3.28" height="426.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 122: 270</title></rect>
+<rect x="558.37" y="302.49" width="3.28" height="413.51" fill="#d56a4c" opacity="0.82"><title>inventory max length 123: 227</title></rect>
+<rect x="561.99" y="306.25" width="3.28" height="409.75" fill="#d56a4c" opacity="0.82"><title>inventory max length 124: 216</title></rect>
+<rect x="565.62" y="296.39" width="3.28" height="419.61" fill="#d56a4c" opacity="0.82"><title>inventory max length 125: 246</title></rect>
+<rect x="569.25" y="297.63" width="3.28" height="418.37" fill="#d56a4c" opacity="0.82"><title>inventory max length 126: 242</title></rect>
+<rect x="572.88" y="286.03" width="3.28" height="429.97" fill="#d56a4c" opacity="0.82"><title>inventory max length 127: 282</title></rect>
+<rect x="576.51" y="293.37" width="3.28" height="422.63" fill="#d56a4c" opacity="0.82"><title>inventory max length 128: 256</title></rect>
+<rect x="580.14" y="291.61" width="3.28" height="424.39" fill="#d56a4c" opacity="0.82"><title>inventory max length 129: 262</title></rect>
+<rect x="583.77" y="288.49" width="3.28" height="427.51" fill="#d56a4c" opacity="0.82"><title>inventory max length 130: 273</title></rect>
+<rect x="587.40" y="288.21" width="3.28" height="427.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 131: 274</title></rect>
+<rect x="591.03" y="289.61" width="3.28" height="426.39" fill="#d56a4c" opacity="0.82"><title>inventory max length 132: 269</title></rect>
+<rect x="594.66" y="284.96" width="3.28" height="431.04" fill="#d56a4c" opacity="0.82"><title>inventory max length 133: 286</title></rect>
+<rect x="598.28" y="283.64" width="3.28" height="432.36" fill="#d56a4c" opacity="0.82"><title>inventory max length 134: 291</title></rect>
+<rect x="601.91" y="276.20" width="3.28" height="439.80" fill="#d56a4c" opacity="0.82"><title>inventory max length 135: 321</title></rect>
+<rect x="605.54" y="275.49" width="3.28" height="440.51" fill="#d56a4c" opacity="0.82"><title>inventory max length 136: 324</title></rect>
+<rect x="609.17" y="279.33" width="3.28" height="436.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 137: 308</title></rect>
+<rect x="612.80" y="272.05" width="3.28" height="443.95" fill="#d56a4c" opacity="0.82"><title>inventory max length 138: 339</title></rect>
+<rect x="616.43" y="264.39" width="3.28" height="451.61" fill="#d56a4c" opacity="0.82"><title>inventory max length 139: 375</title></rect>
+<rect x="620.06" y="268.12" width="3.28" height="447.88" fill="#d56a4c" opacity="0.82"><title>inventory max length 140: 357</title></rect>
+<rect x="623.69" y="272.50" width="3.28" height="443.50" fill="#d56a4c" opacity="0.82"><title>inventory max length 141: 337</title></rect>
+<rect x="627.32" y="267.70" width="3.28" height="448.30" fill="#d56a4c" opacity="0.82"><title>inventory max length 142: 359</title></rect>
+<rect x="630.94" y="274.33" width="3.28" height="441.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 143: 329</title></rect>
+<rect x="634.57" y="271.38" width="3.28" height="444.62" fill="#d56a4c" opacity="0.82"><title>inventory max length 144: 342</title></rect>
+<rect x="638.20" y="268.12" width="3.28" height="447.88" fill="#d56a4c" opacity="0.82"><title>inventory max length 145: 357</title></rect>
+<rect x="641.83" y="266.03" width="3.28" height="449.97" fill="#d56a4c" opacity="0.82"><title>inventory max length 146: 367</title></rect>
+<rect x="645.46" y="266.03" width="3.28" height="449.97" fill="#d56a4c" opacity="0.82"><title>inventory max length 147: 367</title></rect>
+<rect x="649.09" y="265.20" width="3.28" height="450.80" fill="#d56a4c" opacity="0.82"><title>inventory max length 148: 371</title></rect>
+<rect x="652.72" y="267.70" width="3.28" height="448.30" fill="#d56a4c" opacity="0.82"><title>inventory max length 149: 359</title></rect>
+<rect x="656.35" y="276.67" width="3.28" height="439.33" fill="#d56a4c" opacity="0.82"><title>inventory max length 150: 319</title></rect>
+<rect x="659.98" y="267.28" width="3.28" height="448.72" fill="#d56a4c" opacity="0.82"><title>inventory max length 151: 361</title></rect>
+<rect x="663.61" y="276.67" width="3.28" height="439.33" fill="#d56a4c" opacity="0.82"><title>inventory max length 152: 319</title></rect>
+<rect x="667.23" y="268.12" width="3.28" height="447.88" fill="#d56a4c" opacity="0.82"><title>inventory max length 153: 357</title></rect>
+<rect x="670.86" y="276.67" width="3.28" height="439.33" fill="#d56a4c" opacity="0.82"><title>inventory max length 154: 319</title></rect>
+<rect x="674.49" y="282.09" width="3.28" height="433.91" fill="#d56a4c" opacity="0.82"><title>inventory max length 155: 297</title></rect>
+<rect x="678.12" y="278.11" width="3.28" height="437.89" fill="#d56a4c" opacity="0.82"><title>inventory max length 156: 313</title></rect>
+<rect x="681.75" y="279.09" width="3.28" height="436.91" fill="#d56a4c" opacity="0.82"><title>inventory max length 157: 309</title></rect>
+<rect x="685.38" y="273.64" width="3.28" height="442.36" fill="#d56a4c" opacity="0.82"><title>inventory max length 158: 332</title></rect>
+<rect x="689.01" y="285.23" width="3.28" height="430.77" fill="#d56a4c" opacity="0.82"><title>inventory max length 159: 285</title></rect>
+<rect x="692.64" y="288.77" width="3.28" height="427.23" fill="#d56a4c" opacity="0.82"><title>inventory max length 160: 272</title></rect>
+<rect x="696.27" y="285.49" width="3.28" height="430.51" fill="#d56a4c" opacity="0.82"><title>inventory max length 161: 284</title></rect>
+<rect x="699.90" y="312.85" width="3.28" height="403.15" fill="#d56a4c" opacity="0.82"><title>inventory max length 162: 198</title></rect>
+<rect x="703.52" y="305.55" width="3.28" height="410.45" fill="#d56a4c" opacity="0.82"><title>inventory max length 163: 218</title></rect>
+<rect x="707.15" y="306.96" width="3.28" height="409.04" fill="#d56a4c" opacity="0.82"><title>inventory max length 164: 214</title></rect>
+<rect x="710.78" y="304.18" width="3.28" height="411.82" fill="#d56a4c" opacity="0.82"><title>inventory max length 165: 222</title></rect>
+<rect x="714.41" y="320.07" width="3.28" height="395.93" fill="#d56a4c" opacity="0.82"><title>inventory max length 166: 180</title></rect>
+<rect x="718.04" y="320.92" width="3.28" height="395.08" fill="#d56a4c" opacity="0.82"><title>inventory max length 167: 178</title></rect>
+<rect x="721.67" y="316.78" width="3.28" height="399.22" fill="#d56a4c" opacity="0.82"><title>inventory max length 168: 188</title></rect>
+<rect x="725.30" y="327.58" width="3.28" height="388.42" fill="#d56a4c" opacity="0.82"><title>inventory max length 169: 163</title></rect>
+<rect x="728.93" y="333.87" width="3.28" height="382.13" fill="#d56a4c" opacity="0.82"><title>inventory max length 170: 150</title></rect>
+<rect x="732.56" y="331.88" width="3.28" height="384.12" fill="#d56a4c" opacity="0.82"><title>inventory max length 171: 154</title></rect>
+<rect x="736.19" y="332.87" width="3.28" height="383.13" fill="#d56a4c" opacity="0.82"><title>inventory max length 172: 152</title></rect>
+<rect x="739.81" y="342.97" width="3.28" height="373.03" fill="#d56a4c" opacity="0.82"><title>inventory max length 173: 133</title></rect>
+<rect x="743.44" y="351.37" width="3.28" height="364.63" fill="#d56a4c" opacity="0.82"><title>inventory max length 174: 119</title></rect>
+<rect x="747.07" y="356.63" width="3.28" height="359.37" fill="#d56a4c" opacity="0.82"><title>inventory max length 175: 111</title></rect>
+<rect x="750.70" y="64.00" width="3.28" height="652.00" fill="#b94128" opacity="0.82"><title>inventory max length 176: 5,221</title></rect>
+<rect x="754.33" y="338.55" width="3.28" height="377.45" fill="#d56a4c" opacity="0.82"><title>inventory max length 177: 141</title></rect>
+<rect x="757.96" y="355.28" width="3.28" height="360.72" fill="#d56a4c" opacity="0.82"><title>inventory max length 178: 113</title></rect>
+<rect x="761.59" y="360.82" width="3.28" height="355.18" fill="#d56a4c" opacity="0.82"><title>inventory max length 179: 105</title></rect>
+<rect x="765.22" y="342.40" width="3.28" height="373.60" fill="#d56a4c" opacity="0.82"><title>inventory max length 180: 134</title></rect>
+<rect x="768.85" y="378.54" width="3.28" height="337.46" fill="#d56a4c" opacity="0.82"><title>inventory max length 181: 83</title></rect>
+<rect x="772.48" y="363.01" width="3.28" height="352.99" fill="#d56a4c" opacity="0.82"><title>inventory max length 182: 102</title></rect>
+<rect x="776.10" y="390.28" width="3.28" height="325.72" fill="#d56a4c" opacity="0.82"><title>inventory max length 183: 71</title></rect>
+<rect x="779.73" y="391.34" width="3.28" height="324.66" fill="#d56a4c" opacity="0.82"><title>inventory max length 184: 70</title></rect>
+<rect x="783.36" y="386.16" width="3.28" height="329.84" fill="#d56a4c" opacity="0.82"><title>inventory max length 185: 75</title></rect>
+<rect x="786.99" y="387.17" width="3.28" height="328.83" fill="#d56a4c" opacity="0.82"><title>inventory max length 186: 74</title></rect>
+<rect x="790.62" y="416.54" width="3.28" height="299.46" fill="#d56a4c" opacity="0.82"><title>inventory max length 187: 50</title></rect>
+<rect x="794.25" y="438.95" width="3.28" height="277.05" fill="#d56a4c" opacity="0.82"><title>inventory max length 188: 37</title></rect>
+<rect x="797.88" y="410.79" width="3.28" height="305.21" fill="#d56a4c" opacity="0.82"><title>inventory max length 189: 54</title></rect>
+<rect x="801.51" y="416.54" width="3.28" height="299.46" fill="#d56a4c" opacity="0.82"><title>inventory max length 190: 50</title></rect>
+<rect x="805.14" y="454.46" width="3.28" height="261.54" fill="#d56a4c" opacity="0.82"><title>inventory max length 191: 30</title></rect>
+<rect x="808.77" y="436.97" width="3.28" height="279.03" fill="#d56a4c" opacity="0.82"><title>inventory max length 192: 38</title></rect>
+<rect x="812.39" y="456.96" width="3.28" height="259.04" fill="#d56a4c" opacity="0.82"><title>inventory max length 193: 29</title></rect>
+<rect x="816.02" y="470.84" width="3.28" height="245.16" fill="#d56a4c" opacity="0.82"><title>inventory max length 194: 24</title></rect>
+<rect x="819.65" y="459.54" width="3.28" height="256.46" fill="#d56a4c" opacity="0.82"><title>inventory max length 195: 28</title></rect>
+<rect x="823.28" y="467.86" width="3.28" height="248.14" fill="#d56a4c" opacity="0.82"><title>inventory max length 196: 25</title></rect>
+<rect x="826.91" y="495.86" width="3.28" height="220.14" fill="#d56a4c" opacity="0.82"><title>inventory max length 197: 17</title></rect>
+<rect x="830.54" y="470.84" width="3.28" height="245.16" fill="#d56a4c" opacity="0.82"><title>inventory max length 198: 24</title></rect>
+<rect x="834.17" y="491.74" width="3.28" height="224.26" fill="#d56a4c" opacity="0.82"><title>inventory max length 199: 18</title></rect>
+<rect x="837.80" y="500.22" width="3.28" height="215.78" fill="#d56a4c" opacity="0.82"><title>inventory max length 200: 16</title></rect>
+<rect x="841.43" y="567.79" width="3.28" height="148.21" fill="#d56a4c" opacity="0.82"><title>inventory max length 201: 6</title></rect>
+<rect x="845.06" y="540.63" width="3.28" height="175.37" fill="#d56a4c" opacity="0.82"><title>inventory max length 202: 9</title></rect>
+<rect x="848.68" y="579.53" width="3.28" height="136.47" fill="#d56a4c" opacity="0.82"><title>inventory max length 203: 5</title></rect>
+<rect x="852.31" y="557.62" width="3.28" height="158.38" fill="#d56a4c" opacity="0.82"><title>inventory max length 204: 7</title></rect>
+<rect x="855.94" y="557.62" width="3.28" height="158.38" fill="#d56a4c" opacity="0.82"><title>inventory max length 205: 7</title></rect>
+<rect x="859.57" y="579.53" width="3.28" height="136.47" fill="#d56a4c" opacity="0.82"><title>inventory max length 206: 5</title></rect>
+<rect x="863.20" y="533.37" width="3.28" height="182.63" fill="#d56a4c" opacity="0.82"><title>inventory max length 207: 10</title></rect>
+<rect x="866.83" y="579.53" width="3.28" height="136.47" fill="#d56a4c" opacity="0.82"><title>inventory max length 208: 5</title></rect>
+<rect x="870.46" y="593.42" width="3.28" height="122.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 209: 4</title></rect>
+<rect x="874.09" y="593.42" width="3.28" height="122.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 210: 4</title></rect>
+<rect x="877.72" y="632.33" width="3.28" height="83.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 211: 2</title></rect>
+<rect x="881.34" y="610.42" width="3.28" height="105.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 212: 3</title></rect>
+<rect x="884.97" y="632.33" width="3.28" height="83.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 213: 2</title></rect>
+<rect x="888.60" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 214: 1</title></rect>
+<rect x="892.23" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 215: 1</title></rect>
+<rect x="895.86" y="610.42" width="3.28" height="105.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 216: 3</title></rect>
+<rect x="899.49" y="610.42" width="3.28" height="105.58" fill="#d56a4c" opacity="0.82"><title>inventory max length 217: 3</title></rect>
+<rect x="906.75" y="632.33" width="3.28" height="83.67" fill="#d56a4c" opacity="0.82"><title>inventory max length 219: 2</title></rect>
+<rect x="914.01" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 221: 1</title></rect>
+<rect x="917.63" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 222: 1</title></rect>
+<rect x="928.52" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 225: 1</title></rect>
+<rect x="939.41" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 228: 1</title></rect>
+<rect x="982.96" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 240: 1</title></rect>
+<rect x="1004.73" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 246: 1</title></rect>
+<rect x="1011.99" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 248: 1</title></rect>
+<rect x="1019.25" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 250: 1</title></rect>
+<rect x="1037.39" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 255: 1</title></rect>
+<rect x="1106.34" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 274: 1</title></rect>
+<rect x="1233.36" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 309: 1</title></rect>
+<rect x="1255.13" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 315: 1</title></rect>
+<rect x="1360.37" y="663.21" width="3.28" height="52.79" fill="#d56a4c" opacity="0.82"><title>inventory max length 344: 1</title></rect>
+<line x1="113.81" y1="64" x2="113.81" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="113.81" y1="716" x2="113.81" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="113.81" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">0</text>
+<line x1="204.54" y1="64" x2="204.54" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="204.54" y1="716" x2="204.54" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="204.54" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">25</text>
+<line x1="295.26" y1="64" x2="295.26" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="295.26" y1="716" x2="295.26" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="295.26" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">50</text>
+<line x1="385.99" y1="64" x2="385.99" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="385.99" y1="716" x2="385.99" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="385.99" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">75</text>
+<line x1="476.71" y1="64" x2="476.71" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="476.71" y1="716" x2="476.71" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="476.71" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">100</text>
+<line x1="567.44" y1="64" x2="567.44" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="567.44" y1="716" x2="567.44" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="567.44" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">125</text>
+<line x1="658.16" y1="64" x2="658.16" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="658.16" y1="716" x2="658.16" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="658.16" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">150</text>
+<line x1="748.89" y1="64" x2="748.89" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="748.89" y1="716" x2="748.89" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="748.89" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">175</text>
+<line x1="839.61" y1="64" x2="839.61" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="839.61" y1="716" x2="839.61" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="839.61" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">200</text>
+<line x1="930.34" y1="64" x2="930.34" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="930.34" y1="716" x2="930.34" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="930.34" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">225</text>
+<line x1="1021.06" y1="64" x2="1021.06" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="1021.06" y1="716" x2="1021.06" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="1021.06" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">250</text>
+<line x1="1111.79" y1="64" x2="1111.79" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="1111.79" y1="716" x2="1111.79" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="1111.79" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">275</text>
+<line x1="1202.51" y1="64" x2="1202.51" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="1202.51" y1="716" x2="1202.51" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="1202.51" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">300</text>
+<line x1="1293.23" y1="64" x2="1293.23" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="1293.23" y1="716" x2="1293.23" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="1293.23" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">325</text>
+<line x1="1362.19" y1="64" x2="1362.19" y2="716" stroke="#f0eee9" stroke-width="1"/>
+<line x1="1362.19" y1="716" x2="1362.19" y2="722" stroke="#202124" stroke-width="1"/>
+<text x="1362.19" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5f6368">344</text>
+<line x1="585.58" y1="64" x2="585.58" y2="716" stroke="#005fcc" stroke-width="2.4" stroke-dasharray="8 5" opacity="0.95"><title>Inventory p50: 130</title></line>
+<text x="585.58" y="410.00" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 585.58 410.00)" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#005fcc" stroke="#fbfbf8" stroke-width="8" paint-order="stroke fill">p50: 130</text>
+<line x1="690.82" y1="64" x2="690.82" y2="716" stroke="#005fcc" stroke-width="2.4" stroke-dasharray="8 5" opacity="0.95"><title>Inventory p75: 159</title></line>
+<text x="690.82" y="410.00" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 690.82 410.00)" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#005fcc" stroke="#fbfbf8" stroke-width="8" paint-order="stroke fill">p75: 159</text>
+<line x1="752.52" y1="64" x2="752.52" y2="716" stroke="#005fcc" stroke-width="2.4" stroke-dasharray="8 5" opacity="0.95"><title>Inventory p90/p95: 176</title></line>
+<text x="752.52" y="410.00" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 752.52 410.00)" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#005fcc" stroke="#fbfbf8" stroke-width="8" paint-order="stroke fill">p90/p95: 176</text>
+<line x1="803.32" y1="64" x2="803.32" y2="716" stroke="#005fcc" stroke-width="2.4" stroke-dasharray="8 5" opacity="0.95"><title>Inventory p99: 190</title></line>
+<text x="803.32" y="410.00" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 803.32 410.00)" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#005fcc" stroke="#fbfbf8" stroke-width="8" paint-order="stroke fill">p99: 190</text>
+<line x1="868.64" y1="64" x2="868.64" y2="716" stroke="#005fcc" stroke-width="2.4" stroke-dasharray="8 5" opacity="0.95"><title>Inventory p99.9: 208</title></line>
+<text x="868.64" y="410.00" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 868.64 410.00)" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#005fcc" stroke="#fbfbf8" stroke-width="8" paint-order="stroke fill">p99.9: 208</text>
+<line x1="1108.16" y1="64" x2="1108.16" y2="716" stroke="#005fcc" stroke-width="2.4" stroke-dasharray="8 5" opacity="0.95"><title>Inventory p99.99: 274</title></line>
+<text x="1108.16" y="410.00" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 1108.16 410.00)" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#005fcc" stroke="#fbfbf8" stroke-width="8" paint-order="stroke fill">p99.99: 274</text>
+<line x1="112" y1="64" x2="112" y2="716" stroke="#202124" stroke-width="1.2"/>
+<line x1="112" y1="716" x2="1364" y2="716" stroke="#202124" stroke-width="1.2"/>
+<text x="738.0" y="794" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#202124">Maximum HAT length in inventory, characters</text>
+<text x="28" y="390.0" text-anchor="middle" transform="rotate(-90 28 390.0)" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#202124">Inventory count, log10(count + 1)</text>
+</svg>

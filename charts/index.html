@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hat Length Frequency Charts</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f4ee;
+        --panel: #fffefa;
+        --ink: #202124;
+        --muted: #62666d;
+        --line: #d8d2c7;
+        --accent: #2f6f73;
+        --accent-strong: #c4492d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      main {
+        width: min(1440px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 28px 0 40px;
+      }
+
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 0 4px 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.6rem, 1.1rem + 1.4vw, 2.6rem);
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      .meta {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      a {
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.16em;
+      }
+
+      .chart-grid {
+        display: grid;
+        gap: 18px;
+        margin-top: 22px;
+      }
+
+      section {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1.05rem;
+        letter-spacing: 0;
+      }
+
+      .section-copy {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.35;
+      }
+
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-bottom: 1px solid var(--line);
+      }
+
+      .stat {
+        min-width: 0;
+        padding: 12px 16px;
+        border-right: 1px solid var(--line);
+      }
+
+      .stat:last-child {
+        border-right: 0;
+      }
+
+      .label {
+        display: block;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .value {
+        display: block;
+        margin-top: 3px;
+        font-size: 1.1rem;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
+      .samples {
+        border-top: 1px solid var(--line);
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px 16px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      td {
+        font-size: 0.92rem;
+      }
+
+      td code {
+        overflow-wrap: anywhere;
+        white-space: normal;
+      }
+
+      figure {
+        margin: 0;
+        padding: 12px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: #fbfbf8;
+      }
+
+      @media (max-width: 760px) {
+        main {
+          width: min(100% - 20px, 1440px);
+          padding-top: 18px;
+        }
+
+        header,
+        .section-head {
+          align-items: start;
+          flex-direction: column;
+        }
+
+        .links {
+          justify-content: flex-start;
+        }
+
+        .stat-row {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .stat:nth-child(2) {
+          border-right: 0;
+        }
+
+        .stat:nth-child(-n + 2) {
+          border-bottom: 1px solid var(--line);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Hat Length Frequency Charts</h1>
+          <p class="meta">Generated from <code>data/inv.db</code>, grouped by <code>length(hat)</code>.</p>
+        </div>
+        <nav class="links" aria-label="Downloads">
+          <a href="distinct_hat_length_frequency.csv">Distinct hats CSV</a>
+          <a href="inventory_max_hat_length_frequency.csv">Inventory max CSV</a>
+          <a href="hat_length_frequency_log_compare.svg">Log SVG</a>
+        </nav>
+      </header>
+
+      <div class="chart-grid">
+        <section aria-labelledby="distinct-hats-title">
+          <div class="section-head">
+            <div>
+              <h2 id="distinct-hats-title">Distinct Hats</h2>
+              <p class="section-copy">Frequency of HAT string lengths across unique HAT strings in <code>inv.db</code>.</p>
+            </div>
+            <a href="distinct_hat_length_frequency.svg">Open SVG</a>
+          </div>
+          <div class="stat-row">
+            <div class="stat">
+              <span class="label">Unique Hats</span>
+              <span class="value">626,859</span>
+            </div>
+            <div class="stat">
+              <span class="label">Length Range</span>
+              <span class="value">12-344</span>
+            </div>
+            <div class="stat">
+              <span class="label">Peak Frequency</span>
+              <span class="value">8,058</span>
+            </div>
+            <div class="stat">
+              <span class="label">Peak</span>
+              <span class="value">84 chars</span>
+            </div>
+          </div>
+          <figure>
+            <img src="distinct_hat_length_frequency.svg" alt="Frequency chart of distinct hat string lengths">
+          </figure>
+          <div class="samples">
+            <table>
+              <thead>
+                <tr>
+                  <th>Percentile</th>
+                  <th>Length</th>
+                  <th>Sample distinct HAT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p50</td>
+                  <td>88</td>
+                  <td><code>Airborne_Attire;TMC;Unique;;;;Airborne_Attire;The_Color_of_a_Gentlemann's_Business_Pants</code></td>
+                </tr>
+                <tr>
+                  <td>p75</td>
+                  <td>115</td>
+                  <td><code>Backwoods_Boomstick_Mk.II_Back_Scratcher_(Field-Tested);TMC;Decorated_Weapon;;;;Backwoods_Boomstick_Mk.II_War_Paint</code></td>
+                </tr>
+                <tr>
+                  <td>p90</td>
+                  <td>136</td>
+                  <td><code>Festivized_Gifting_Mann's_Wrapping_Paper_Family_Business_(Field-Tested);TMCF;Decorated_Weapon;;;;Gifting_Mann's_Wrapping_Paper_War_Paint</code></td>
+                </tr>
+                <tr>
+                  <td>p95</td>
+                  <td>147</td>
+                  <td><code>Festivized_Killstreak_Gifting_Mann's_Wrapping_Paper_Reserve_Shooter_(Field-Tested);TMCF;Decorated_Weapon;;;;Gifting_Mann's_Wrapping_Paper_War_Paint</code></td>
+                </tr>
+                <tr>
+                  <td>p99</td>
+                  <td>165</td>
+                  <td><code>Festivized_Professional_Killstreak_Bovine_Blazemaker_Mk.II_Brass_Beast_(Battle_Scarred);TMCF;Decorated_Weapon;;Hypno-Beam;Manndarin;Bovine_Blazemaker_Mk.II_War_Paint</code></td>
+                </tr>
+                <tr>
+                  <td>p99.9</td>
+                  <td>187</td>
+                  <td><code>Festivized_Professional_Killstreak_Woodsy_Widowmaker_Mk.II_Disciplinary_Action_(Field-Tested);TMCF;Decorated_Weapon;;Cerebral_Discharge;Villainous_Violet;Woodsy_Widowmaker_Mk.II_War_Paint</code></td>
+                </tr>
+                <tr>
+                  <td>p99.99</td>
+                  <td>205</td>
+                  <td><code>Strange_Festivized_Professional_Killstreak_Australium_Flame_Thrower;TMCF;Strange;;Cerebral_Discharge;Villainous_Violet;;;Giant_Robots_Destroyed*cProjectiles_Reflected*cTeammates_Extinguished;Halloween_Fire</code></td>
+                </tr>
+                <tr>
+                  <td>p100</td>
+                  <td>344</td>
+                  <td><code>Strange_Professional_Killstreak_Carbonado_Botkiller_Stickybomb_Launcher_Mk.I;TMC;Strange;;Cerebral_Discharge;Villainous_Violet;;;Medics_Killed_That_Have_Full_ÜberCharge_(only_2Fort_Invasion)*cMedics_Killed_That_Have_Full_ÜberCharge_(only_Maple_Ridge_Event)*cMedics_Killed_That_Have_Full_ÜberCharge_(only_Moonshine_Event);Exorcism*cPumpkin_Bombs</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="distinct-log-title">
+          <div class="section-head">
+            <div>
+              <h2 id="distinct-log-title">Inventory Max HAT Length Log Bar Chart</h2>
+              <p class="section-copy">For each inventory with at least one item, this charts the longest HAT string found in that inventory.</p>
+            </div>
+            <a href="hat_length_frequency_log_compare.svg">Open SVG</a>
+          </div>
+          <div class="stat-row">
+            <div class="stat">
+              <span class="label">Scale</span>
+              <span class="value">log10(n + 1)</span>
+            </div>
+            <div class="stat">
+              <span class="label">Inventories</span>
+              <span class="value">38,630</span>
+            </div>
+            <div class="stat">
+              <span class="label">p50/p75/p90/p95</span>
+              <span class="value">130 / 159 / 176 / 176</span>
+            </div>
+            <div class="stat">
+              <span class="label">p99/p99.9/p99.99/Max</span>
+              <span class="value">190 / 208 / 274 / 344</span>
+            </div>
+          </div>
+          <figure>
+            <img src="hat_length_frequency_log_compare.svg" alt="Log-scale chart of maximum hat string length per inventory">
+          </figure>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
