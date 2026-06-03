@@ -1,5 +1,6 @@
 {
   "tasks": {
+    "test": "deno test",
     "create-hats": "deno run --allow-read=data/ --allow-write=data/ bin/create-hats.ts"
   },
   "imports": {
