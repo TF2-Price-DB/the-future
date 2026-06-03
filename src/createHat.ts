@@ -127,25 +127,25 @@ export function unparseHatVersionZ(serialized: string): HatVersionZProps {
     );
   }
 
-  const parts = serialized.split(";");
-  if (parts.length > 10) {
+  const fields = serialized.split(";");
+  if (fields.length > 10) {
     throw new Error("Invalid Hat Version Z: too many fields");
   }
 
   return {
-    marketHashName: fromGluedString(parts[0] ?? ""),
-    tradable: (parts[1] ?? "").includes("T"),
-    marketable: (parts[1] ?? "").includes("M"),
-    craftable: (parts[1] ?? "").includes("C"),
-    festivized: (parts[1] ?? "").includes("F"),
-    qualities: fromGluedStringArray(parts[2] ?? ""),
-    unusualEffects: fromGluedStringArray(parts[3] ?? ""),
-    killstreakers: fromGluedStringArray(parts[4] ?? ""),
-    sheens: fromGluedStringArray(parts[5] ?? ""),
-    warPaints: fromGluedStringArray(parts[6] ?? ""),
-    paints: fromGluedStringArray(parts[7] ?? ""),
-    killstreakParts: fromGluedStringArray(parts[8] ?? ""),
-    spells: fromGluedStringArray(parts[9] ?? ""),
+    marketHashName: fromGluedString(fields[0] ?? ""),
+    tradable: (fields[1] ?? "").includes("T"),
+    marketable: (fields[1] ?? "").includes("M"),
+    craftable: (fields[1] ?? "").includes("C"),
+    festivized: (fields[1] ?? "").includes("F"),
+    qualities: fromGluedStringArray(fields[2] ?? ""),
+    unusualEffects: fromGluedStringArray(fields[3] ?? ""),
+    killstreakers: fromGluedStringArray(fields[4] ?? ""),
+    sheens: fromGluedStringArray(fields[5] ?? ""),
+    warPaints: fromGluedStringArray(fields[6] ?? ""),
+    paints: fromGluedStringArray(fields[7] ?? ""),
+    killstreakParts: fromGluedStringArray(fields[8] ?? ""),
+    spells: fromGluedStringArray(fields[9] ?? ""),
   };
 }
 

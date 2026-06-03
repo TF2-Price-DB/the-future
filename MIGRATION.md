@@ -53,8 +53,8 @@ Before changing what you write, change what you read.
 A reader should:
 
 1. Split the string on `^`.
-1. Reject strings with an odd number of fields.
-1. Read fields as `version, body, version, body`.
+1. Reject strings with an odd number of tokens.
+1. Read tokens as `version, body, version, body`.
 1. Pick the best version it understands.
 1. Ignore versions it does not understand.
 

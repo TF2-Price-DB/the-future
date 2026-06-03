@@ -36,16 +36,16 @@ decoding rules.
 ## Parsing
 
 - Take the HAT and split the string on the Hat operator (caret) `^`.
-- Assert that you have an even number of fields.
-- The odd fields are versions, explained later.
-- The even fields are the body of the HAT.
+- Assert that you have an even number of tokens.
+- The odd tokens are versions, explained later.
+- The even tokens are the body of the HAT.
 - The body of version `Z` MUST NOT end in `;`. Serializers MUST right trim all
   trailing `;` characters.
-- Split the body of version `Z` on `;` to get parts
+- Split the body of version `Z` on `;` to get fields.
 - Any absent fields are presumed to be an empty string.
-- Interpret the parts in this manner
+- Interpret the fields in this manner
 
-| Part | Name                                        | Encoding           |
+| Field | Name                                        | Encoding           |
 | ---: | :------------------------------------------ | :----------------- |
 |   1. | marketHashName                              | Glued String       |
 |   2. | tradable, marketable, craftable, festivized | TMCF, by presence  |
@@ -64,24 +64,24 @@ Festivized is `MF`.
 
 A [full description](./specs/Z.md) of everything in version Z, including
 [inventory snippets](./specs/Z.md#inventory-snippets) that show how real
-description fields become HAT fields, is available in the spec.
+inventory descriptions become Version Z fields, is available in the spec.
 
 ## Versions
 
 This standard assumes that it will be superseded. If somebody wants to extend
 HAT, they can do so. SKU has been extended over time by adding non-standard
-parts to it. HAT wants to avoid that. If you want to create your own flavor, you
+fields to it. HAT wants to avoid that. If you want to create your own flavor, you
 should create your own version.
 
-`Z^Dueling_Mini-Game;TC;Unique` is the version Z way of writing the common,
+`Z^Dueling_Mini-Game;TM;Unique` is the version Z way of writing the common,
 tradable, marketable, Dueling Mini-Game. Let's say you want to create a
 different HAT depending on the number of uses the mini-game has remaining. You
 MAY NOT alter the version Z HAT. You create your own forked flavor version;
 
-`Lex^Dueling_Mini-Game(5);TC;Unique` This version is the `Lex` version. Your
+`Lex^Dueling_Mini-Game(5);TM;Unique` This version is the `Lex` version. Your
 custom version name may contain any glyph, besides whitespace and caret.
 
-`Z^Dueling_Mini-Game;TC;Unique^Lex^Dueling_Mini-Game(5);TC;Unique` is the dual
+`Z^Dueling_Mini-Game;TM;Unique^Lex^Dueling_Mini-Game(5);TM;Unique` is the dual
 mode way to describe a Dueling mini-game. A multi mode HAT is made through
 combining `HAT1^HAT2`, `HAT1^HAT2^HAT3`, etc. This can improve compatibility
 with systems that do not understand version `Lex` (yet). Systems are required to

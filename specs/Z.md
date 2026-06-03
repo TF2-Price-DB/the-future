@@ -109,16 +109,16 @@ A HAT can contain one or more versioned segments joined with `^`.
 To parse:
 
 1. Split the complete string on `^`.
-1. The result MUST contain an even number of fields.
-1. Odd-position fields are version names.
-1. Even-position fields are version bodies.
+1. The result MUST contain an even number of tokens.
+1. Odd-position tokens are version names.
+1. Even-position tokens are version bodies.
 1. Use the body whose version is `Z`.
 1. Ignore versions the parser does not understand.
 
 For example:
 
 ```text
-Z^Dueling_Mini-Game;TC;Unique^Lex^Dueling_Mini-Game(5);TC;Unique
+Z^Dueling_Mini-Game;TM;Unique^Lex^Dueling_Mini-Game(5);TM;Unique
 ```
 
 This contains a Version Z segment and a custom `Lex` segment. A parser that only

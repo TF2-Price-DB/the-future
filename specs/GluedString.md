@@ -1,7 +1,7 @@
 # Glued String
 
-A Glued String is the string encoding used by HAT fields that need text without
-whitespace.
+A Glued String is the string encoding used by HAT fields and version bodies that
+need text without whitespace.
 
 ## Glued String
 
@@ -54,8 +54,8 @@ To encode:
 
 To decode:
 
-1. If the field is empty, return an empty array.
-1. Otherwise, split the field on `*c`.
+1. If the encoded array is empty, return an empty array.
+1. Otherwise, split the encoded array on `*c`.
 1. Decode every element as a Glued String.
 
 Examples:
