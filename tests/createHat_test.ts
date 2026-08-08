@@ -64,3 +64,38 @@ Deno.test("unparseHatVersionZ reads loaner flag", () => {
     },
   );
 });
+
+Deno.test("createHatVersionZProps recognizes war paints only with a parenthesized wear", () => {
+  for (
+    const wear of [
+      "Factory New",
+      "Minimal Wear",
+      "Field-Tested",
+      "Well-Worn",
+      "Battle Scarred",
+    ]
+  ) {
+    assertEquals(
+      createHatVersionZProps({
+        market_hash_name: `Hana Disciplinary Action (${wear})`,
+        descriptions: [{ value: "✔ Hana War Paint" }],
+      }).warPaints,
+      ["Hana War Paint"],
+    );
+  }
+
+  for (
+    const marketHashName of [
+      "Hana Disciplinary Action",
+      "Hana Disciplinary Action Field-Tested",
+    ]
+  ) {
+    assertEquals(
+      createHatVersionZProps({
+        market_hash_name: marketHashName,
+        descriptions: [{ value: "✔ Hana War Paint" }],
+      }).warPaints,
+      [],
+    );
+  }
+});

@@ -22,6 +22,9 @@ export type HatVersionZProps = {
   spells: string[];
 };
 
+const WEAR_IN_PARENS =
+  /\((?:Factory New|Minimal Wear|Field-Tested|Well-Worn|Battle Scarred)\)/;
+
 export function createHatVersionZ(props: HatVersionZProps): string {
   return (toGluedStringValue(props.marketHashName) +
     ";" +
@@ -96,7 +99,9 @@ export function createHatVersionZProps(
 
   const sheens = pickDescriptions(descriptions, /^Sheen: (?<parsed>.+)$/);
 
-  const warPaints = pickDescriptions(descriptions, /^✔ (?<parsed>.+)$/);
+  const warPaints = WEAR_IN_PARENS.test(marketHashName)
+    ? pickDescriptions(descriptions, /^✔ (?<parsed>.+)$/)
+    : [];
 
   const paints = pickDescriptions(descriptions, /^Paint Color: (?<parsed>.+)$/);
 

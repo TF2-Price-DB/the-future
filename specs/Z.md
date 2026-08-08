@@ -97,7 +97,10 @@ Given a Steam item description object:
    unusual effects can be unboxed from the case.
 1. Read killstreakers from descriptions matching `Killstreaker: <value>`.
 1. Read sheens from descriptions matching `Sheen: <value>`.
-1. Read war paints from descriptions matching `✔ <value>`.
+1. If `market_hash_name` contains one of `(Factory New)`, `(Minimal Wear)`,
+   `(Field-Tested)`, `(Well-Worn)`, or `(Battle Scarred)`, read war paints from
+   descriptions matching `✔ <value>`. The parentheses are part of the wear
+   check. Otherwise, leave `warPaints` empty.
 1. Read paints from descriptions matching `Paint Color: <value>`.
 1. Read killstreak parts from descriptions matching `(<part>: <number>)`, and
    keep only `<part>`.
@@ -296,11 +299,12 @@ exact `Festivized` description does that.
 Produces:
 
 ```text
-Z^A_Handsome_Handy_Thing;MC;Unique;;;;A_Handsome_Handy_Thing
+Z^A_Handsome_Handy_Thing;MC;Unique
 ```
 
-The checked `✔` description becomes field 7. This is a skin-style checked
-collection entry rather than a decorated weapon war paint.
+The checked `✔` description is ignored because the market hash name does not
+contain a parenthesized wear. This is a skin-style checked collection entry
+rather than a decorated weapon war paint.
 
 ### War Paint
 
@@ -401,10 +405,11 @@ Z^A_Brush_with_Death;C;Unique;;;;;After_Eight
 Produces:
 
 ```text
-Z^Professional_Killstreak_C.A.P.P.E.R;TMCL;Unique;;Hypno-Beam;Mean_Green;The_C.A.P.P.E.R
+Z^Professional_Killstreak_C.A.P.P.E.R;TMCL;Unique;;Hypno-Beam;Mean_Green
 ```
 
-The loaner description adds `L` to field 2 after any other flags.
+The loaner description adds `L` to field 2 after any other flags. The checked
+description is ignored because the market hash name has no parenthesized wear.
 
 ### Strange Parts
 

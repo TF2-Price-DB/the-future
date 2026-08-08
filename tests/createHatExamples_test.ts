@@ -1172,7 +1172,7 @@ Deno.test("Version Z example: A Handsome Handy Thing", () => {
     ],
     "sealed": 0,
     "sealed_type": 0,
-  }, "Z^A_Handsome_Handy_Thing;MC;Unique;;;;A_Handsome_Handy_Thing");
+  }, "Z^A_Handsome_Handy_Thing;MC;Unique");
 });
 
 Deno.test("Version Z example: Hana Disciplinary Action (Field-Tested)", () => {
@@ -1870,7 +1870,7 @@ Deno.test("Version Z example: Loaner Professional Killstreak C.A.P.P.E.R", () =>
       "sealed": 0,
       "sealed_type": 0,
     },
-    "Z^Professional_Killstreak_C.A.P.P.E.R;TMCL;Unique;;Hypno-Beam;Mean_Green;The_C.A.P.P.E.R",
+    "Z^Professional_Killstreak_C.A.P.P.E.R;TMCL;Unique;;Hypno-Beam;Mean_Green",
   );
 });
 
