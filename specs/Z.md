@@ -29,7 +29,7 @@ Version Z is intended to be:
 
 ## Body Fields
 
-Split the Version Z body on `;`. There are at most ten fields.
+Split the Version Z body on `;`. There are at most eleven fields.
 
 | Field | Name                                                          | Encoding           |
 | ----: | :------------------------------------------------------------ | :----------------- |
@@ -41,8 +41,9 @@ Split the Version Z body on `;`. There are at most ten fields.
 |     6 | `sheens`                                                      | Glued String Array |
 |     7 | `warPaints`                                                   | Glued String Array |
 |     8 | `paints`                                                      | Glued String Array |
-|     9 | `killstreakParts`                                             | Glued String Array |
-|    10 | `spells`                                                      | Glued String Array |
+|     9 | `strangeParts`                                                | Glued String Array |
+|    10 | `strangeFilters`                                              | Glued String Array |
+|    11 | `spells`                                                      | Glued String Array |
 
 Absent fields are interpreted as empty strings. For array fields, an empty
 string means an empty array.
@@ -51,7 +52,7 @@ The body MUST NOT end with `;`. Serializers MUST remove trailing empty fields by
 right-trimming trailing `;` characters. Parsers MUST reject a Version Z body
 that ends with `;`.
 
-Parsers MUST reject a Version Z body with more than ten fields.
+Parsers MUST reject a Version Z body with more than eleven fields.
 
 ## Flag Field
 
@@ -102,8 +103,13 @@ Given a Steam item description object:
    descriptions matching `✔ <value>`. The parentheses are part of the wear
    check. Otherwise, leave `warPaints` empty.
 1. Read paints from descriptions matching `Paint Color: <value>`.
-1. Read killstreak parts from descriptions matching `(<part>: <number>)`, and
+1. Read Strange Parts from descriptions matching `(<part>: <number>)`, and
    keep only `<part>`.
+1. When a Strange Part has a suffix of ` (only <filter>)`, read `<filter>` as a
+   Strange Filter. Parentheses inside `<filter>` may be nested and MUST be
+   balanced; the outer `(only ...)` parentheses are not part of the value.
+   Strange Filters apply to the item, so repeated filter names across multiple
+   Strange Parts MUST be emitted only once.
 1. Read spells from descriptions matching
    `Halloween: <spell> (spell only active during event)`.
 
@@ -251,11 +257,11 @@ The `★ Unusual Effect:` description becomes field 4.
 Produces:
 
 ```text
-Z^Collector's_Festivized_Professional_Killstreak_Amputator;TMCF;Collector's;;Fire_Horns;Agonizing_Emerald;;;;Exorcism
+Z^Collector's_Festivized_Professional_Killstreak_Amputator;TMCF;Collector's;;Fire_Horns;Agonizing_Emerald;;;;;Exorcism
 ```
 
 `Festivized` adds `F` to field 2. `Killstreaker:` becomes field 5, `Sheen:`
-becomes field 6, and the Halloween spell becomes field 10.
+becomes field 6, and the Halloween spell becomes field 11.
 
 ### Festive, Not Festivized
 
@@ -437,3 +443,9 @@ Z^Strange_AWPer_Hand;TMC;Strange;;;;;;Damage_Dealt*cHeadshot_Kills*cPlayer_Hits
 
 The counter values are ignored. The part names become field 9 and are sorted as
 a Glued String Array.
+
+A filtered counter such as
+`(Robots Destroyed: 34) (only Mann Up (Advanced (Tour)))` adds `Robots
+Destroyed` to field 9 and `Mann Up (Advanced (Tour))` to field 10. The nested,
+balanced parentheses remain part of the Strange Filter. If several Strange
+Parts repeat that filter, field 10 still contains it only once.

@@ -842,7 +842,7 @@ Deno.test("Version Z example: Collector's Festivized Professional Killstreak Amp
       "sealed": 0,
       "sealed_type": 0,
     },
-    "Z^Collector's_Festivized_Professional_Killstreak_Amputator;TMCF;Collector's;;Fire_Horns;Agonizing_Emerald;;;;Exorcism",
+    "Z^Collector's_Festivized_Professional_Killstreak_Amputator;TMCF;Collector's;;Fire_Horns;Agonizing_Emerald;;;;;Exorcism",
   );
 });
 

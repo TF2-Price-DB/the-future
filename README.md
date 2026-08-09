@@ -55,8 +55,9 @@ decoding rules.
 |    6. | sheens                                              | Glued String Array |
 |    7. | warPaints                                           | Glued String Array |
 |    8. | paints                                              | Glued String Array |
-|    9. | killstreakParts                                     | Glued String Array |
-|   10. | spells                                              | Glued String Array |
+|    9. | strangeParts                                        | Glued String Array |
+|   10. | strangeFilters                                      | Glued String Array |
+|   11. | spells                                              | Glued String Array |
 
 The second field is indicated by presence in order. For example, Tradable,
 Marketable is `TM`; Tradable, Marketable, Craftable is `TMC`; Marketable,

@@ -18,7 +18,8 @@ export type HatVersionZProps = {
   sheens: string[];
   warPaints: string[];
   paints: string[];
-  killstreakParts: string[];
+  strangeParts: string[];
+  strangeFilters: string[];
   spells: string[];
 };
 
@@ -46,7 +47,9 @@ export function createHatVersionZ(props: HatVersionZProps): string {
     ";" +
     toGluedStringArray(props.paints) +
     ";" +
-    toGluedStringArray(props.killstreakParts) +
+    toGluedStringArray(props.strangeParts) +
+    ";" +
+    toGluedStringArray(props.strangeFilters) +
     ";" +
     toGluedStringArray(props.spells)).replace(/;+$/, "");
 }
@@ -110,10 +113,19 @@ export function createHatVersionZProps(
     /^Halloween: (?<parsed>.+) \(spell only active during event\)$/,
   );
 
-  const killstreakParts = pickDescriptions(
-    descriptions,
-    /^\((?<parsed>.+): \d+\)$/,
-  );
+  const strangeParts: string[] = [];
+  const strangeFilterSet = new Set<string>();
+  for (const description of descriptions) {
+    if (typeof description.value !== "string") {
+      throw new Error("Could not read sub description", { cause: description });
+    }
+    const parsed = parseStrangeCounter(description.value);
+    if (!parsed) continue;
+    strangeParts.push(parsed.part);
+    if (parsed.filter !== undefined) strangeFilterSet.add(parsed.filter);
+  }
+  strangeParts.sort();
+  const strangeFilters = [...strangeFilterSet].sort();
 
   return {
     marketHashName,
@@ -128,8 +140,9 @@ export function createHatVersionZProps(
     sheens,
     warPaints,
     paints,
+    strangeParts,
+    strangeFilters,
     spells,
-    killstreakParts,
   };
 }
 
@@ -141,7 +154,7 @@ export function unparseHatVersionZ(serialized: string): HatVersionZProps {
   }
 
   const fields = serialized.split(";");
-  if (fields.length > 10) {
+  if (fields.length > 11) {
     throw new Error("Invalid Hat Version Z: too many fields");
   }
 
@@ -158,9 +171,44 @@ export function unparseHatVersionZ(serialized: string): HatVersionZProps {
     sheens: fromGluedStringArray(fields[5] ?? ""),
     warPaints: fromGluedStringArray(fields[6] ?? ""),
     paints: fromGluedStringArray(fields[7] ?? ""),
-    killstreakParts: fromGluedStringArray(fields[8] ?? ""),
-    spells: fromGluedStringArray(fields[9] ?? ""),
+    strangeParts: fromGluedStringArray(fields[8] ?? ""),
+    strangeFilters: fromGluedStringArray(fields[9] ?? ""),
+    spells: fromGluedStringArray(fields[10] ?? ""),
   };
+}
+
+function parseStrangeCounter(
+  value: string,
+): { part: string; filter?: string } | undefined {
+  const counterEnd = findClosingParen(value, 0);
+  if (counterEnd === undefined) return undefined;
+
+  const counter = value.slice(1, counterEnd);
+  const counterMatch = /^(?<part>.+): \d+$/.exec(counter);
+  if (!counterMatch) return undefined;
+
+  const suffix = value.slice(counterEnd + 1);
+  if (suffix === "") return { part: counterMatch.groups!.part! };
+  if (!suffix.startsWith(" (only ")) return undefined;
+
+  const filterStart = counterEnd + 2;
+  const filterEnd = findClosingParen(value, filterStart);
+  if (filterEnd !== value.length - 1) return undefined;
+
+  return {
+    part: counterMatch.groups!.part!,
+    filter: value.slice(filterStart + "(only ".length, filterEnd),
+  };
+}
+
+function findClosingParen(value: string, start: number): number | undefined {
+  if (value[start] !== "(") return undefined;
+  let depth = 0;
+  for (let index = start; index < value.length; index++) {
+    if (value[index] === "(") depth++;
+    if (value[index] === ")" && --depth === 0) return index;
+  }
+  return undefined;
 }
 
 function pickDescriptions(descriptions: Prop[], matcher: RegExp) {
