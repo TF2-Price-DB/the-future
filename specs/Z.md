@@ -100,8 +100,8 @@ Given a Steam item description object:
 1. Read sheens from descriptions matching `Sheen: <value>`.
 1. If `market_hash_name` contains one of `(Factory New)`, `(Minimal Wear)`,
    `(Field-Tested)`, `(Well-Worn)`, or `(Battle Scarred)`, read war paints from
-   descriptions matching `✔ <value>`. The parentheses are part of the wear
-   check. Otherwise, leave `warPaints` empty.
+   descriptions matching `✔ <value>` (or `★ <value>` that does not match `★ Unusual Effect:`).
+   The parentheses are part of the wear check. Otherwise, leave `warPaints` empty.
 1. Read paints from descriptions matching `Paint Color: <value>`.
 1. Read Strange Parts from descriptions matching `(<part>: <number>)`, and
    keep only `<part>`.
@@ -338,6 +338,34 @@ The checked `✔` description becomes field 7. The market hash name identifies t
 applied weapon, while field 7 preserves that the source war paint is Hana War
 Paint.
 
+### War Paint On An Unusual Weapon
+
+```json
+{
+  "market_hash_name": "Unusual Peppermint Swirl Rescue Ranger (Field-Tested)",
+  "tradable": 1,
+  "marketable": 1,
+  "tags": [
+    { "category": "Quality", "localized_tag_name": "Unusual" }
+  ],
+  "descriptions": [
+    { "value": "★ Unusual Effect: Hot" },
+    { "value": "★ Peppermint Swirl War Paint" }
+  ]
+}
+```
+
+Produces:
+
+```text
+Z^Unusual_Peppermint_Swirl_Rescue_Ranger_(Field-Tested);TMC;Unusual;Hot;;;Peppermint_Swirl_War_Paint
+```
+
+The selected collection entry uses `★` instead of `✔`. Its value becomes field
+7, while `Hot` becomes field 4. The shared star marker does not make
+`Unusual Effect: Hot` a war paint. A legacy entry such as `★ Blitzkrieg Knife`
+likewise contributes the complete value `Blitzkrieg Knife` to field 7.
+
 ### War Paint, Unapplied
 
 ```json
@@ -349,7 +377,8 @@ Paint.
     { "category": "Quality", "localized_tag_name": "Self-Made" }
   ],
   "descriptions": [
-    { "value": "★ Unusual Effect: Community Sparkle" }
+    { "value": "★ Unusual Effect: Community Sparkle" },
+    { "value": "★ Crawlspace Critters War Paint" }
   ]
 }
 ```
@@ -357,11 +386,14 @@ Paint.
 Produces:
 
 ```text
-Z^Self-Made_Crawlspace_Critters_War_Paint_(Factory_New);C;Self-Made;Community_Sparkle
+Z^Self-Made_Crawlspace_Critters_War_Paint_(Factory_New);C;Self-Made;Community_Sparkle;;;Crawlspace_Critters_War_Paint
 ```
 
-An unapplied war paint is the item itself, so the war paint name stays in field
-1 and field 7 is empty. The unusual effect still becomes field 4.
+An unapplied war paint can also have a selected collection entry. Its full
+market hash name stays in field 1, and the marked collection value becomes
+field 7 under the same rule as an applied war paint. The unusual effect still
+becomes field 4. Without a selected collection entry, field 7 remains empty;
+the parser does not infer it from the market hash name or unusual effect.
 
 ### Paint
 

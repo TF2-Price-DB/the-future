@@ -103,7 +103,10 @@ export function createHatVersionZProps(
   const sheens = pickDescriptions(descriptions, /^Sheen: (?<parsed>.+)$/);
 
   const warPaints = WEAR_IN_PARENS.test(marketHashName)
-    ? pickDescriptions(descriptions, /^✔ (?<parsed>.+)$/)
+    ? pickDescriptions(
+      descriptions,
+      /^(?:✔|★) (?!Unusual Effect: )(?<parsed>.+)$/,
+    )
     : [];
 
   const paints = pickDescriptions(descriptions, /^Paint Color: (?<parsed>.+)$/);

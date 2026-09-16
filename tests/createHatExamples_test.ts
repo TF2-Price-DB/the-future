@@ -1593,7 +1593,7 @@ Deno.test("Version Z example: Self-Made Crawlspace Critters War Paint (Factory N
       "sealed": 0,
       "sealed_type": 0,
     },
-    "Z^Self-Made_Crawlspace_Critters_War_Paint_(Factory_New);C;Self-Made;Community_Sparkle",
+    "Z^Self-Made_Crawlspace_Critters_War_Paint_(Factory_New);C;Self-Made;Community_Sparkle;;;Crawlspace_Critters_War_Paint",
   );
 });
 

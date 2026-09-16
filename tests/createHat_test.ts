@@ -135,3 +135,42 @@ Deno.test("createHatVersionZProps recognizes war paints only with a parenthesize
     );
   }
 });
+
+Deno.test("Version Z separates starred war paints from unusual effects", () => {
+  const props = createHatVersionZProps({
+    market_hash_name: "Unusual Peppermint Swirl Rescue Ranger (Field-Tested)",
+    tradable: 1,
+    marketable: 1,
+    tags: [{ category: "Quality", localized_tag_name: "Unusual" }],
+    descriptions: [
+      { value: "★ Unusual Effect: Hot" },
+      { value: "Winter 2020 Collection" },
+      { value: "    Gingerbread Winner War Paint" },
+      { value: "★ Peppermint Swirl War Paint" },
+      { value: "    Glacial Glazed War Paint" },
+    ],
+  });
+
+  assertEquals(props.warPaints, ["Peppermint Swirl War Paint"]);
+  assertEquals(props.unusualEffects, ["Hot"]);
+  const serialized = createHatVersionZ(props);
+  assertEquals(
+    serialized,
+    "Unusual_Peppermint_Swirl_Rescue_Ranger_(Field-Tested);TMC;Unusual;Hot;;;Peppermint_Swirl_War_Paint",
+  );
+  assertEquals(unparseHatVersionZ(serialized), props);
+});
+
+Deno.test("createHatVersionZProps preserves legacy starred collection names", () => {
+  for (const skin of ["Blitzkrieg Knife", "Shot to Hell Pistol"]) {
+    const props = createHatVersionZProps({
+      market_hash_name: `Unusual Professional Killstreak ${skin} (Factory New)`,
+      descriptions: [
+        { value: "★ Unusual Effect: Cool" },
+        { value: `★ ${skin}` },
+      ],
+    });
+    assertEquals(props.warPaints, [skin]);
+    assertEquals(props.unusualEffects, ["Cool"]);
+  }
+});
