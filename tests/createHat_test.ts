@@ -174,3 +174,52 @@ Deno.test("createHatVersionZProps preserves legacy starred collection names", ()
     assertEquals(props.unusualEffects, ["Cool"]);
   }
 });
+
+Deno.test("Version Z recognizes all non-craftable restriction descriptions", () => {
+  for (
+    const value of [
+      "( Not Usable in Crafting )",
+      "( Not Tradable, Marketable, or Usable in Crafting )",
+      "( Not Tradable, Marketable, Usable in Crafting, or Gift Wrappable )",
+    ]
+  ) {
+    const props = createHatVersionZProps({
+      market_hash_name: "Test Item",
+      tradable: 1,
+      marketable: 1,
+      descriptions: [{ value }],
+    });
+    assertEquals(props.craftable, false);
+    assertEquals(createHatVersionZ(props), "Test_Item;TM");
+    assertEquals(unparseHatVersionZ(createHatVersionZ(props)), props);
+
+    const usertextProps = createHatVersionZProps({
+      market_hash_name: "Test Item",
+      descriptions: [{ type: "usertext", value }],
+    });
+    assertEquals(usertextProps.craftable, true);
+  }
+});
+
+Deno.test("Version Z does not infer craftability from trade restrictions or partial text", () => {
+  for (
+    const value of [
+      "( Not Tradable or Marketable )",
+      "Not Usable in Crafting",
+      "Prefix ( Not Usable in Crafting )",
+      "( Not Usable in Crafting ) suffix",
+    ]
+  ) {
+    const props = createHatVersionZProps({
+      market_hash_name: "Test Item",
+      tradable: 0,
+      marketable: 0,
+      descriptions: [{ value }],
+    });
+    assertEquals(createHatVersionZ(props), "Test_Item;C");
+  }
+  assertEquals(
+    createHatVersionZProps({ market_hash_name: "Test Item" }).craftable,
+    true,
+  );
+});

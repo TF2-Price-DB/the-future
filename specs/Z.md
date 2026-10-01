@@ -85,8 +85,14 @@ Given a Steam item description object:
 1. Read `market_hash_name` as `marketHashName`.
 1. Read `tradable` as the `T` flag.
 1. Read `marketable` as the `M` flag.
-1. Set `craftable` unless the descriptions include exactly the text
-   `( Not Usable in Crafting )`.
+1. Set `craftable` unless the descriptions include any of these exact texts:
+
+   - `( Not Usable in Crafting )`
+   - `( Not Tradable, Marketable, or Usable in Crafting )`
+   - `( Not Tradable, Marketable, Usable in Crafting, or Gift Wrappable )`
+
+   These descriptions only determine `craftable`; continue reading `tradable`
+   and `marketable` from their respective properties.
 1. Set `festivized` when the descriptions include exactly the text `Festivized`.
 1. Set `loaner` when the descriptions include exactly the text
    `( Loaner - Cannot be traded, marketed, crafted, or modified )`.

@@ -71,11 +71,13 @@ export function createHatVersionZProps(
 
   const marketable = !!desc.marketable;
 
-  const craftable = pickDescriptions(
-    descriptions,
-    /^(?<parsed>\( Not Usable in Crafting \))$/,
-  )
-    .length === 0;
+  const craftable = !descriptions.some(({ value }) =>
+    [
+      "( Not Usable in Crafting )",
+      "( Not Tradable, Marketable, or Usable in Crafting )",
+      "( Not Tradable, Marketable, Usable in Crafting, or Gift Wrappable )",
+    ].includes(value as string)
+  );
 
   const festivized = pickDescriptions(descriptions, /^(?<parsed>Festivized)$/)
     .length === 1;
