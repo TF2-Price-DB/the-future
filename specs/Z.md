@@ -111,9 +111,11 @@ Given a Steam item description object:
 1. Read paints from descriptions matching `Paint Color: <value>`.
 1. Read Strange Parts from descriptions matching `(<part>: <number>)`, and
    keep only `<part>`.
-1. When a Strange Part has a suffix of ` (only <filter>)`, read `<filter>` as a
-   Strange Filter. Parentheses inside `<filter>` may be nested and MUST be
-   balanced; the outer `(only ...)` parentheses are not part of the value.
+1. A filtered counter has the form `(<part> (only <filter>): <number>)`.
+   The filter is inside the counter parentheses, before the colon and count.
+   Read `<part>` as the Strange Part (without the filter suffix) and `<filter>`
+   as a Strange Filter. Both names MUST be nonempty. Parentheses inside
+   `<filter>` may be nested and MUST be balanced; the outer `(only ...)` parentheses are not part of the value.
    Strange Filters apply to the item, so repeated filter names across multiple
    Strange Parts MUST be emitted only once.
 1. Read spells from descriptions matching
@@ -483,7 +485,7 @@ The counter values are ignored. The part names become field 9 and are sorted as
 a Glued String Array.
 
 A filtered counter such as
-`(Robots Destroyed: 34) (only Mann Up (Advanced (Tour)))` adds `Robots
+`(Robots Destroyed (only Mann Up (Advanced (Tour))): 34)` adds `Robots
 Destroyed` to field 9 and `Mann Up (Advanced (Tour))` to field 10. The nested,
 balanced parentheses remain part of the Strange Filter. If several Strange
 Parts repeat that filter, field 10 still contains it only once.

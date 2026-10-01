@@ -72,8 +72,8 @@ Deno.test("createHatVersionZProps separates Strange Parts and balanced Strange F
     market_hash_name: "Strange Weapon",
     descriptions: [
       { value: "(Player Hits: 12)" },
-      { value: "(Robots Destroyed: 34) (only Mann Up (Advanced (Tour)))" },
-      { value: "(Robot Spies Destroyed: 5) (only Mann Up (Advanced (Tour)))" },
+      { value: "(Robots Destroyed (only Mann Up (Advanced (Tour))): 34)" },
+      { value: "(Robot Spies Destroyed (only Mann Up (Advanced (Tour))): 5)" },
     ],
   });
 
@@ -89,7 +89,7 @@ Deno.test("Version Z serializes and unparses Strange Filters after Strange Parts
   const props = createHatVersionZProps({
     market_hash_name: "Strange Weapon",
     descriptions: [
-      { value: "(Robots Destroyed: 34) (only Mann Up (Advanced (Tour)))" },
+      { value: "(Robots Destroyed (only Mann Up (Advanced (Tour))): 34)" },
     ],
   });
   const serialized = createHatVersionZ(props);
@@ -222,4 +222,44 @@ Deno.test("Version Z does not infer craftability from trade restrictions or part
     createHatVersionZProps({ market_hash_name: "Test Item" }).craftable,
     true,
   );
+});
+
+Deno.test("Version Z extracts the inventory's embedded Strange Filter", () => {
+  const props = createHatVersionZProps({
+    market_hash_name: "Strange Haunted Kritz or Treat Canteen",
+    descriptions: [
+      { value: "(Carnival Games Won (only Competitive): 0)" },
+      { value: "(Carnival Underworld Kills (only Competitive): 4)" },
+      { value: "(Player Hits: 12)" },
+      { type: "usertext", value: "(Kills (only Forged Filter): 5)" },
+    ],
+  });
+  assertEquals(props.strangeParts, [
+    "Carnival Games Won",
+    "Carnival Underworld Kills",
+    "Player Hits",
+  ]);
+  assertEquals(props.strangeFilters, ["Competitive"]);
+  assertEquals(unparseHatVersionZ(createHatVersionZ(props)), props);
+});
+
+Deno.test("Version Z rejects malformed filtered counters and trailing descriptions", () => {
+  for (
+    const value of [
+      "(Kills (only Competitive: 5)",
+      "(Kills (only Competitive)): 5)",
+      "(Kills (only ): 5)",
+      "( (only Competitive): 5)",
+      "(Kills (only Competitive) suffix: 5)",
+      "(Kills: 5) (only Competitive)",
+      "(Kills (only Competitive): 5) suffix",
+    ]
+  ) {
+    const props = createHatVersionZProps({
+      market_hash_name: "Test Item",
+      descriptions: [{ value }],
+    });
+    assertEquals(props.strangeParts, [], value);
+    assertEquals(props.strangeFilters, [], value);
+  }
 });

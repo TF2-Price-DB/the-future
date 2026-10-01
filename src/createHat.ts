@@ -186,24 +186,25 @@ function parseStrangeCounter(
   value: string,
 ): { part: string; filter?: string } | undefined {
   const counterEnd = findClosingParen(value, 0);
-  if (counterEnd === undefined) return undefined;
+  if (counterEnd !== value.length - 1) return undefined;
 
   const counter = value.slice(1, counterEnd);
   const counterMatch = /^(?<part>.+): \d+$/.exec(counter);
   if (!counterMatch) return undefined;
 
-  const suffix = value.slice(counterEnd + 1);
-  if (suffix === "") return { part: counterMatch.groups!.part! };
-  if (!suffix.startsWith(" (only ")) return undefined;
+  const label = counterMatch.groups!.part!;
+  const marker = label.indexOf(" (only ");
+  if (marker === -1) return { part: label };
 
-  const filterStart = counterEnd + 2;
-  const filterEnd = findClosingParen(value, filterStart);
-  if (filterEnd !== value.length - 1) return undefined;
+  const filterStart = marker + 1;
+  const filterEnd = findClosingParen(label, filterStart);
+  if (filterEnd !== label.length - 1) return undefined;
 
-  return {
-    part: counterMatch.groups!.part!,
-    filter: value.slice(filterStart + "(only ".length, filterEnd),
-  };
+  const part = label.slice(0, marker);
+  const filter = label.slice(filterStart + "(only ".length, filterEnd);
+  if (!part || !filter) return undefined;
+
+  return { part, filter };
 }
 
 function findClosingParen(value: string, start: number): number | undefined {
