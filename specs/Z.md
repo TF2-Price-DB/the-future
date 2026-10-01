@@ -110,14 +110,20 @@ Given a Steam item description object:
    The parentheses are part of the wear check. Otherwise, leave `warPaints` empty.
 1. Read paints from descriptions matching `Paint Color: <value>`.
 1. Read Strange Parts from descriptions matching `(<part>: <number>)`, and
-   keep only `<part>`.
+   keep only `<part>`. Exclude these exact, case-sensitive counter names from
+   `strangeParts`, regardless of the item: `Kill Assists`, `Übers`,
+   `Sentry Kills`, `Health Dispensed to Teammates`, `Teammates Teleported`,
+   `Teammates Whipped`, and `Double Donks`. These are built-in counters, not
+   attached Strange Parts.
 1. A filtered counter has the form `(<part> (only <filter>): <number>)`.
    The filter is inside the counter parentheses, before the colon and count.
    Read `<part>` as the Strange Part (without the filter suffix) and `<filter>`
    as a Strange Filter. Both names MUST be nonempty. Parentheses inside
    `<filter>` may be nested and MUST be balanced; the outer `(only ...)` parentheses are not part of the value.
    Strange Filters apply to the item, so repeated filter names across multiple
-   Strange Parts MUST be emitted only once.
+   Strange Parts MUST be emitted only once. Apply the counter-name exclusions
+   after removing the filter suffix. A filter on an excluded counter MUST still
+   be included in `strangeFilters`.
 1. Read spells from descriptions matching
    `Halloween: <spell> (spell only active during event)`.
 

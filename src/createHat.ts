@@ -118,6 +118,15 @@ export function createHatVersionZProps(
     /^Halloween: (?<parsed>.+) \(spell only active during event\)$/,
   );
 
+  const excludedStrangeParts = new Set([
+    "Kill Assists",
+    "Übers",
+    "Sentry Kills",
+    "Health Dispensed to Teammates",
+    "Teammates Teleported",
+    "Teammates Whipped",
+    "Double Donks",
+  ]);
   const strangeParts: string[] = [];
   const strangeFilterSet = new Set<string>();
   for (const description of descriptions) {
@@ -126,7 +135,7 @@ export function createHatVersionZProps(
     }
     const parsed = parseStrangeCounter(description.value);
     if (!parsed) continue;
-    strangeParts.push(parsed.part);
+    if (!excludedStrangeParts.has(parsed.part)) strangeParts.push(parsed.part);
     if (parsed.filter !== undefined) strangeFilterSet.add(parsed.filter);
   }
   strangeParts.sort();

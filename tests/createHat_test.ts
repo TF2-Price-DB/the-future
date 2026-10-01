@@ -263,3 +263,34 @@ Deno.test("Version Z rejects malformed filtered counters and trailing descriptio
     assertEquals(props.strangeFilters, [], value);
   }
 });
+
+Deno.test("Version Z excludes built-in weapon counters but preserves their filters", () => {
+  const excluded = [
+    "Kill Assists",
+    "Übers",
+    "Sentry Kills",
+    "Health Dispensed to Teammates",
+    "Teammates Teleported",
+    "Teammates Whipped",
+    "Double Donks",
+  ];
+  for (const part of excluded) {
+    const props = createHatVersionZProps({
+      market_hash_name: "Strange Weapon",
+      descriptions: [
+        { value: `(${part}: 12)` },
+        { value: `(${part} (only Competitive): 34)` },
+        { value: "(Allied Healing Done: 56)" },
+        { value: "(Kills: 78)" },
+        { value: "(Carnival Games Won: 90)" },
+      ],
+    });
+    assertEquals(props.strangeParts, [
+      "Allied Healing Done",
+      "Carnival Games Won",
+      "Kills",
+    ], part);
+    assertEquals(props.strangeFilters, ["Competitive"], part);
+    assertEquals(unparseHatVersionZ(createHatVersionZ(props)), props);
+  }
+});
