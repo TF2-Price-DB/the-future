@@ -109,14 +109,19 @@ Given a Steam item description object:
    descriptions matching `✔ <value>` (or `★ <value>` that does not match `★ Unusual Effect:`).
    The parentheses are part of the wear check. Otherwise, leave `warPaints` empty.
 1. Read paints from descriptions matching `Paint Color: <value>`.
-1. Read Strange Parts from descriptions matching `(<part>: <number>)`, and
-   keep only `<part>`. Exclude these exact, case-sensitive counter names from
+1. Read Strange Parts from descriptions matching `(<part>: <number>)` or
+   `     <part>: <number>` (exactly five ASCII spaces before a non-whitespace
+   character, without outer parentheses), and keep only `<part>`.
+   Exclude these exact, case-sensitive counter names from
    `strangeParts`, regardless of the item: `Kill Assists`, `Übers`,
    `Sentry Kills`, `Health Dispensed to Teammates`, `Teammates Teleported`,
-   `Teammates Whipped`, and `Double Donks`. These are built-in counters, not
-   attached Strange Parts.
-1. A filtered counter has the form `(<part> (only <filter>): <number>)`.
-   The filter is inside the counter parentheses, before the colon and count.
+   `Teammates Whipped`, `Double Donks`, and `Humiliations`. These are built-in
+   counters, not attached Strange Parts. Additionally, exclude `Kills` from the
+   indented form only; preserve it in the parenthesized form, which can represent
+   an attached cosmetic part.
+1. A filtered counter has the form `(<part> (only <filter>): <number>)` or
+   `     <part> (only <filter>): <number>`.
+   The filter is part of the counter label, before the colon and count.
    Read `<part>` as the Strange Part (without the filter suffix) and `<filter>`
    as a Strange Filter. Both names MUST be nonempty. Parentheses inside
    `<filter>` may be nested and MUST be balanced; the outer `(only ...)` parentheses are not part of the value.

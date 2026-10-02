@@ -273,6 +273,7 @@ Deno.test("Version Z excludes built-in weapon counters but preserves their filte
     "Teammates Teleported",
     "Teammates Whipped",
     "Double Donks",
+    "Humiliations",
   ];
   for (const part of excluded) {
     const props = createHatVersionZProps({
@@ -280,6 +281,8 @@ Deno.test("Version Z excludes built-in weapon counters but preserves their filte
       descriptions: [
         { value: `(${part}: 12)` },
         { value: `(${part} (only Competitive): 34)` },
+        { value: `     ${part}: 12` },
+        { value: `     ${part} (only Competitive): 34` },
         { value: "(Allied Healing Done: 56)" },
         { value: "(Kills: 78)" },
         { value: "(Carnival Games Won: 90)" },
@@ -292,5 +295,64 @@ Deno.test("Version Z excludes built-in weapon counters but preserves their filte
     ], part);
     assertEquals(props.strangeFilters, ["Competitive"], part);
     assertEquals(unparseHatVersionZ(createHatVersionZ(props)), props);
+  }
+});
+
+Deno.test("Version Z reads indented attached parts without primary weapon counters", () => {
+  const props = createHatVersionZProps({
+    market_hash_name: "Strange Corsair Medi Gun (Factory New)",
+    descriptions: [
+      { value: "     Übers: 144" },
+      { value: "     Kill Assists: 385" },
+      { value: "     Allied Healing Done: 69979" },
+      { value: "     Kills (only Competitive): 12" },
+      { value: "     Humiliations: 5" },
+      { value: "     Player Hits (only Mann Up (Advanced (Tour))): 34" },
+      { value: "     Damage Dealt (only Mann Up (Advanced (Tour))): 56" },
+      { type: "usertext", value: "     Kills (only Forged Filter): 5" },
+    ],
+  });
+  assertEquals(props.strangeParts, [
+    "Allied Healing Done",
+    "Damage Dealt",
+    "Player Hits",
+  ]);
+  assertEquals(props.strangeFilters, ["Competitive", "Mann Up (Advanced (Tour))"]);
+  assertEquals(unparseHatVersionZ(createHatVersionZ(props)), props);
+});
+
+Deno.test("Version Z preserves parenthesized cosmetic Kills but excludes indented Kills", () => {
+  for (const value of ["     Kills: 0", "     Kills (only Competitive): 12"]) {
+    const props = createHatVersionZProps({
+      market_hash_name: "Strange Misfortunate War Paint (Field-Tested)",
+      descriptions: [{ value }],
+    });
+    assertEquals(props.strangeParts, []);
+  }
+  const props = createHatVersionZProps({
+    market_hash_name: "Strange Haunted Iron Fist",
+    descriptions: [{ value: "(Kills (only Competitive): 12)" }],
+  });
+  assertEquals(props.strangeParts, ["Kills"]);
+  assertEquals(props.strangeFilters, ["Competitive"]);
+});
+
+Deno.test("Version Z rejects malformed indented counters", () => {
+  for (const value of [
+    "    Player Hits: 12",
+    "      Player Hits: 12",
+    "\tPlayer Hits: 12",
+    "     Player Hits: 12 suffix",
+    "     Player Hits: 12 (only Competitive)",
+    "     Player Hits (only Competitive: 12",
+    "     Player Hits (only ): 12",
+    "     Player Hits (only Competitive) suffix: 12",
+  ]) {
+    const props = createHatVersionZProps({
+      market_hash_name: "Test Item",
+      descriptions: [{ value }],
+    });
+    assertEquals(props.strangeParts, [], value);
+    assertEquals(props.strangeFilters, [], value);
   }
 });

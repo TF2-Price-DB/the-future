@@ -126,6 +126,7 @@ export function createHatVersionZProps(
     "Teammates Teleported",
     "Teammates Whipped",
     "Double Donks",
+    "Humiliations",
   ]);
   const strangeParts: string[] = [];
   const strangeFilterSet = new Set<string>();
@@ -135,7 +136,10 @@ export function createHatVersionZProps(
     }
     const parsed = parseStrangeCounter(description.value);
     if (!parsed) continue;
-    if (!excludedStrangeParts.has(parsed.part)) strangeParts.push(parsed.part);
+    if (
+      !excludedStrangeParts.has(parsed.part) &&
+      !(parsed.part === "Kills" && description.value.startsWith("     "))
+    ) strangeParts.push(parsed.part);
     if (parsed.filter !== undefined) strangeFilterSet.add(parsed.filter);
   }
   strangeParts.sort();
@@ -194,10 +198,14 @@ export function unparseHatVersionZ(serialized: string): HatVersionZProps {
 function parseStrangeCounter(
   value: string,
 ): { part: string; filter?: string } | undefined {
-  const counterEnd = findClosingParen(value, 0);
-  if (counterEnd !== value.length - 1) return undefined;
-
-  const counter = value.slice(1, counterEnd);
+  let counter: string;
+  if (/^ {5}\S/.test(value)) {
+    counter = value.slice(5);
+  } else {
+    const counterEnd = findClosingParen(value, 0);
+    if (counterEnd !== value.length - 1) return undefined;
+    counter = value.slice(1, counterEnd);
+  }
   const counterMatch = /^(?<part>.+): \d+$/.exec(counter);
   if (!counterMatch) return undefined;
 
