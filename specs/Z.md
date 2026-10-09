@@ -87,6 +87,7 @@ Given a Steam item description object:
 1. Read `marketable` as the `M` flag.
 1. Set `craftable` unless the descriptions include any of these exact texts:
 
+   - `( Loaner - Cannot be traded, marketed, crafted, or modified )`
    - `( Not Usable in Crafting )`
    - `( Not Tradable, Marketable, or Usable in Crafting )`
    - `( Not Tradable, Marketable, Usable in Crafting, or Gift Wrappable )`
@@ -462,11 +463,12 @@ Z^A_Brush_with_Death;C;Unique;;;;;After_Eight
 Produces:
 
 ```text
-Z^Professional_Killstreak_C.A.P.P.E.R;TMCL;Unique;;Hypno-Beam;Mean_Green
+Z^Professional_Killstreak_C.A.P.P.E.R;TML;Unique;;Hypno-Beam;Mean_Green
 ```
 
-The loaner description adds `L` to field 2 after any other flags. The checked
-description is ignored because the market hash name has no parenthesized wear.
+The loaner description adds `L` to field 2 and suppresses `C`, including when
+the marker is repeated. The checked description is ignored because the market
+hash name has no parenthesized wear.
 
 ### Strange Parts
 
