@@ -71,7 +71,12 @@ export function createHatVersionZProps(
 
   const marketable = !!desc.marketable;
 
-  const craftable = !descriptions.some(({ value }) =>
+  const loaner = pickDescriptions(
+    descriptions,
+    /^(?<parsed>\( Loaner - Cannot be traded, marketed, crafted, or modified \))$/,
+  ).length !== 0;
+
+  const craftable = !loaner && !descriptions.some(({ value }) =>
     [
       "( Not Usable in Crafting )",
       "( Not Tradable, Marketable, or Usable in Crafting )",
@@ -81,11 +86,6 @@ export function createHatVersionZProps(
 
   const festivized = pickDescriptions(descriptions, /^(?<parsed>Festivized)$/)
     .length === 1;
-
-  const loaner = pickDescriptions(
-    descriptions,
-    /^(?<parsed>\( Loaner - Cannot be traded, marketed, crafted, or modified \))$/,
-  ).length === 1;
 
   const qualities = pickTags(tags, "Quality");
 

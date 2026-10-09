@@ -201,6 +201,33 @@ Deno.test("Version Z recognizes all non-craftable restriction descriptions", () 
   }
 });
 
+Deno.test("Version Z loaner prohibitions suppress crafting and tolerate duplicates", () => {
+  const marker =
+    "( Loaner - Cannot be traded, marketed, crafted, or modified )";
+  for (
+    const values of [
+      [marker],
+      [marker, marker],
+      [marker, "( Not Usable in Crafting )"],
+    ]
+  ) {
+    const props = createHatVersionZProps({
+      market_hash_name: "Rocket Launcher",
+      descriptions: values.map((value) => ({ value })),
+    });
+    assertEquals(props.craftable, false);
+    assertEquals(props.loaner, true);
+    assertEquals(createHatVersionZ(props), "Rocket_Launcher;L");
+    assertEquals(unparseHatVersionZ(createHatVersionZ(props)), props);
+  }
+  const usertext = createHatVersionZProps({
+    market_hash_name: "Rocket Launcher",
+    descriptions: [{ value: marker, type: "usertext" }],
+  });
+  assertEquals(usertext.craftable, true);
+  assertEquals(usertext.loaner, false);
+});
+
 Deno.test("Version Z does not infer craftability from trade restrictions or partial text", () => {
   for (
     const value of [

@@ -1870,7 +1870,7 @@ Deno.test("Version Z example: Loaner Professional Killstreak C.A.P.P.E.R", () =>
       "sealed": 0,
       "sealed_type": 0,
     },
-    "Z^Professional_Killstreak_C.A.P.P.E.R;TMCL;Unique;;Hypno-Beam;Mean_Green",
+    "Z^Professional_Killstreak_C.A.P.P.E.R;TML;Unique;;Hypno-Beam;Mean_Green",
   );
 });
 
