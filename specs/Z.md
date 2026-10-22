@@ -103,8 +103,12 @@ Given a Steam item description object:
 1. If the descriptions mention `Case Global Unusual Effect(s)`, leave
    `unusualEffects` empty. These cases are not Unusuals. It just tells you which
    unusual effects can be unboxed from the case.
-1. Read killstreakers from descriptions matching `Killstreaker: <value>`.
-1. Read sheens from descriptions matching `Sheen: <value>`.
+1. Read killstreakers from descriptions matching `Killstreaker: <value>` or
+   `(Killstreaker: <value>, Sheen: <sheen>)`.
+1. Read sheens from descriptions matching `Sheen: <value>`, `(Sheen: <value>)`,
+   or `(Killstreaker: <killstreaker>, Sheen: <value>)`. The parenthesized
+   descriptions identify a killstreak kit fabricator's output attributes.
+   Include them in the same sorted arrays as separate attributes.
 1. If `market_hash_name` contains one of `(Factory New)`, `(Minimal Wear)`,
    `(Field-Tested)`, `(Well-Worn)`, or `(Battle Scarred)`, read war paints from
    descriptions matching `✔ <value>` (or `★ <value>` that does not match `★ Unusual Effect:`).
@@ -282,6 +286,54 @@ Z^Collector's_Festivized_Professional_Killstreak_Amputator;TMCF;Collector's;;Fir
 
 `Festivized` adds `F` to field 2. `Killstreaker:` becomes field 5, `Sheen:`
 becomes field 6, and the Halloween spell becomes field 11.
+
+### Killstreak Kit Fabricators
+
+Professional fabricators combine both output attributes in one description:
+
+```json
+{
+  "market_hash_name": "Professional Killstreak Grenade Launcher Kit Fabricator",
+  "tradable": 1,
+  "marketable": 1,
+  "tags": [
+    { "category": "Quality", "localized_tag_name": "Unique" }
+  ],
+  "descriptions": [
+    { "value": "Professional Killstreak Grenade Launcher Kit" },
+    { "value": "(Killstreaker: Singularity, Sheen: Deadly Daffodil)" }
+  ]
+}
+```
+
+Produces:
+
+```text
+Z^Professional_Killstreak_Grenade_Launcher_Kit_Fabricator;TMC;Unique;;Singularity;Deadly_Daffodil
+```
+
+Specialized fabricators only specify a sheen:
+
+```json
+{
+  "market_hash_name": "Specialized Killstreak Grenade Launcher Kit Fabricator",
+  "tradable": 1,
+  "marketable": 1,
+  "tags": [
+    { "category": "Quality", "localized_tag_name": "Unique" }
+  ],
+  "descriptions": [
+    { "value": "Specialized Killstreak Grenade Launcher Kit" },
+    { "value": "(Sheen: Mean Green)" }
+  ]
+}
+```
+
+Produces:
+
+```text
+Z^Specialized_Killstreak_Grenade_Launcher_Kit_Fabricator;TMC;Unique;;;Mean_Green
+```
 
 ### Festive, Not Festivized
 

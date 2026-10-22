@@ -97,12 +97,21 @@ export function createHatVersionZProps(
     ? []
     : pickDescriptions(descriptions, /^★ Unusual Effect: (?<parsed>.+)$/);
 
-  const killstreakers = pickDescriptions(
-    descriptions,
-    /^Killstreaker: (?<parsed>.+)$/,
-  );
+  const killstreakers = [
+    ...pickDescriptions(descriptions, /^Killstreaker: (?<parsed>.+)$/),
+    ...pickDescriptions(
+      descriptions,
+      /^\(Killstreaker: (?<parsed>.+), Sheen: .+\)$/,
+    ),
+  ].sort();
 
-  const sheens = pickDescriptions(descriptions, /^Sheen: (?<parsed>.+)$/);
+  const sheens = [
+    ...pickDescriptions(descriptions, /^Sheen: (?<parsed>.+)$/),
+    ...pickDescriptions(
+      descriptions,
+      /^\((?:Killstreaker: .+, )?Sheen: (?<parsed>.+)\)$/,
+    ),
+  ].sort();
 
   const warPaints = WEAR_IN_PARENS.test(marketHashName)
     ? pickDescriptions(
